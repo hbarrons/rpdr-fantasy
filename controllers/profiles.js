@@ -70,21 +70,21 @@ function editFavQueen(req,res){
   })
 }
   
-// function updateFavQueen(req,res){
-//   console.log('update queen')
-  // Profile.findById(req.user.profile._id)
-  // .then(profile => {
-  //   profile.favQueen = req.body.favQueen
-  //   profile.save()
-  //   .then(() => {
-  //     res.redirect(`/profiles/${req.user.profile._id}`)
-  //   })
-  // })
-  // .catch(err => {
-  //   console.log(err)
-  //   res.redirect("/")
-  // })
-// }
+function update(req,res){
+  // console.log('update queen')
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.favQueen = req.body.favQueen
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
 
 
 export {
@@ -93,5 +93,5 @@ export {
   createSeasonGuess,
   createFavQueen,
   editFavQueen,
-  // updateFavQueen,
+  update,
 }
