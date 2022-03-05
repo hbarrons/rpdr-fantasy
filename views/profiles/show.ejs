@@ -25,7 +25,10 @@
         </form>
       </section>
     <% } else { %>
-
+      <h3>My favorite queen: <%= profile.favQueen %> </h3>
+      <form action="/profiles/<%= profile._id %>/edit" method="GET">
+        <button class="btn" type="submit">Change Queen</button>
+      </form>
     <% } %>
     <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 
       <h2>Who will be crowned America's next<br>Drag Superstar at the end of season 14?</h2>
@@ -53,7 +56,7 @@
         <button type="submit">Make Guess</button>
       </form>
     <% } else { %>
-     <h3> I hope <%= profile.guessSeason %> is crowned America's next Drag Superstar!</h3>
+     <h3> My season 14 winner prediction: <%= profile.guessSeason %></h3>
     <% } %> 
     <br>
     <h2>Make a guess</h2>

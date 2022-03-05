@@ -8,6 +8,7 @@ router.get('/', profilesCtrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 router.post('/guessSeason', isLoggedIn, profilesCtrl.createSeasonGuess)
 router.post('/favQueen', isLoggedIn, profilesCtrl.createFavQueen)
+router.get('/:id/edit', isLoggedIn, profilesCtrl.editFavQueen)
 
 
 export {

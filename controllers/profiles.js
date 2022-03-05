@@ -39,15 +39,59 @@ function createSeasonGuess(req,res){
       res.redirect(`/profiles/${req.user.profile._id}`)
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 function createFavQueen(req,res){
-  console.log('add favQueen')
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.favQueen = req.body.favQueen
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
+
+function editFavQueen(req,res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+      res.render(`profiles/edit`, {
+        profile,
+        title: 'Update Fav Queen'
+    })
+  })
+}
+  
+// function updateFavQueen(req,res){
+//   console.log('update queen')
+  // Profile.findById(req.user.profile._id)
+  // .then(profile => {
+  //   profile.favQueen = req.body.favQueen
+  //   profile.save()
+  //   .then(() => {
+  //     res.redirect(`/profiles/${req.user.profile._id}`)
+  //   })
+  // })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect("/")
+  // })
+// }
+
 
 export {
   index,
   show,
   createSeasonGuess,
-  createFavQueen
+  createFavQueen,
+  editFavQueen,
+  // updateFavQueen,
 }

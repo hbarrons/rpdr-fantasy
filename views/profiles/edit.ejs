@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Add your favorite Queen</h1>
+  <form action="/profiles/favQueen?_method=PUT" method="POST">
+    <label>
+      Name:
+      <input 
+        type="text" 
+        name="favQueen" 
+        autocomplete="off"
+      >
+    </label>
+    <button type="submit"></button>
+  </form>  
+</section>
+
+<%- include('../partials/footer') %>
