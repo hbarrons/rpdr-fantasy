@@ -13,7 +13,7 @@
   <% } %>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
-    <% if (profile.favQueen === "" || profile.favQueen === undefined) { %> 
+    <% if (profile.favorites.length === 0) { %> 
       <section class="favorites">
         <h2>Add your favorite queen/quotes!</h2>
         <form action="/profiles/favorites" method="post">
@@ -31,10 +31,10 @@
         </form>
       </section>
     <% } else { %>
-      <h3>My favorite queen: <%= profile.favorites.queen %> </h3>
-      <h3>My favorite quote: <%= profile.favorites.quote %> </h3>
+      <h3>My favorite queen: <%= profile.favorites[0].queen %> </h3>
+      <h3>My favorite quote: <%= profile.favorites[0].quote %> </h3>
       <form action="/profiles/<%= profile._id %>/edit" method="GET">
-        <button class="btn" type="submit">Change Queen</button>
+        <button class="btn" type="submit">Update Profile</button>
       </form>
     <% } %>
     <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 

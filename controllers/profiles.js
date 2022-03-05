@@ -54,6 +54,7 @@ function create(req,res){
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
     })
+    console.log('profile.favorites: ', profile.favorites)
   })
   .catch(err => {
     console.log(err)
@@ -63,16 +64,18 @@ function create(req,res){
 
 function editFavQueen(req,res){
   Profile.findById(req.user.profile._id)
-  .then(profile => {
-      res.render(`profiles/edit`, {
-        profile,
-        title: 'Update Fav Queen'
-    })
-  })
+  console.log(req.user.profile)
+  // console.log('queen: ', req.user.profile.favorites.queen)
+  // console.log('quote: ', req.user.profile.favorites.quote)
+  // .then(profile => {
+  //     res.render(`profiles/edit`, {
+  //       profile,
+  //       title: 'Update Fav Queen'
+  //   })
+  // })
 }
   
 function update(req,res){
-  // console.log('update queen')
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.favQueen = req.body.favQueen
