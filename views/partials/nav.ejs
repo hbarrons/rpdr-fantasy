@@ -5,7 +5,7 @@
 <body>
   <nav>
     <% if (user) { %>
-      <a href="/profiles/<%= user._id %> ">My Profile</a>
+      <a href="/profiles/<%= user.profile._id %>">My Profile</a>
       <a href="/profiles">All Players</a>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
