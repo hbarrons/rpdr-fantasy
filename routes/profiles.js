@@ -11,6 +11,8 @@ router.get('/:id/edit', isLoggedIn, profilesCtrl.editFavQueen)
 router.put('/:id', isLoggedIn, profilesCtrl.update)
 router.post('/guessSeason', isLoggedIn, profilesCtrl.createSeasonGuess)
 router.post('/guessEpisode', isLoggedIn, profilesCtrl.createEpisodeGuess)
+router.get('/:id/editGuess', isLoggedIn, profilesCtrl.editGuessEpisode)
+
 
 
 export {

@@ -13,12 +13,6 @@ const guessSchema = new mongoose.Schema({
   timestamps: true
 })
 
-// const quotesSchema = new mongoose.Schema({
-//   quote: {
-//     type: String
-//   }
-// })
-
 const favoritesSchema = new mongoose.Schema({
   queen: {
     type: String,
@@ -32,9 +26,6 @@ const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
   guessSeason: {
-    type: String,
-  },
-  favQueen: {
     type: String,
   },
   favorites: [favoritesSchema],

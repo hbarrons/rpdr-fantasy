@@ -15,8 +15,8 @@
     <% } %>
     <h1>It's <%= profile.name %>!</h1>
     <% if (profile.favorites.length !== 0) { %>
-      <h3>My favorite queen: <%= profile.favorites[0].queen %> </h3>
-      <h3>My favorite quote: <%= profile.favorites[0].quote %> </h3>
+      <h3>Favorite queen: <%= profile.favorites[0].queen %> </h3>
+      <h3>Favorite quote: <%= profile.favorites[0].quote %> </h3>
       <% if (isSelf) { %>
         <form action="/profiles/<%= profile._id %>/edit" method="GET">
           <button class="btn" type="submit">Update Profile</button>
@@ -43,34 +43,35 @@
         </form>
       </section>
     <% } %>
+    <% if (profile.guessSeason !== undefined) { %>
+      <h1>S14 Winner Prediction</h1>
+      <h3><%= profile.guessSeason %></h3>
+    <% } %>
     <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 
       <h2>Who will be crowned America's next<br>Drag Superstar at the end of season 14?</h2>
       <form action="/profiles/guessSeason" method="post">
-        <label>
-          Season 14 Queens:
-          <br>
-          <select name="guessSeason">
-            <option value="Bosco">Bosco</option>
-            <option value="DeJa Skye">DeJa Skye</option>
-            <option value="Willow Pill">Willow Pill</option>
-            <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
-            <option value="Lady Camden">Lady Camden</option>
-            <option value="Daya Betty">Daya Betty</option>
-            <option value="Jasmine Kennedie">Jasmine Kennedie</option>
-            <option value="Jorgeous">Jorgeous</option>
-            <option value="Kerri Colby">Kerri Colby</option>
-            <option value="Maddy Morphosis">Maddy Morphosis</option>
-            <option value="Orion Story">Orion Story</option>
-            <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
-            <option value="Alyssa Hunter">Alyssa Hunter</option>
-            <option value="June Jambalaya">June Jambalaya</option>
-          </select>
-        </label>
+        <br>
+        <select name="guessSeason">
+          <option value="Bosco">Bosco</option>
+          <option value="DeJa Skye">DeJa Skye</option>
+          <option value="Willow Pill">Willow Pill</option>
+          <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
+          <option value="Lady Camden">Lady Camden</option>
+          <option value="Daya Betty">Daya Betty</option>
+          <option value="Jasmine Kennedie">Jasmine Kennedie</option>
+          <option value="Jorgeous">Jorgeous</option>
+          <option value="Kerri Colby">Kerri Colby</option>
+          <option value="Maddy Morphosis">Maddy Morphosis</option>
+          <option value="Orion Story">Orion Story</option>
+          <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
+          <option value="Alyssa Hunter">Alyssa Hunter</option>
+          <option value="June Jambalaya">June Jambalaya</option>
+        </select>
         <button type="submit">Make Guess</button>
       </form>
     <% } %>
     <br>
-    <h2>Make a guess</h2>
+    <h2>Who will win this week's Maxi Challenge?</h2>
     <form 
       action="/profiles/guessEpisode"
       method="post"
@@ -87,6 +88,12 @@
           <option value="Daya Betty">Daya Betty</option>
           <option value="Jasmine Kennedie">Jasmine Kennedie</option>
           <option value="Jorgeous">Jorgeous</option>
+          <option value="Kerri Colby">Kerri Colby</option>
+          <option value="Maddy Morphosis">Maddy Morphosis</option>
+          <option value="Orion Story">Orion Story</option>
+          <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
+          <option value="Alyssa Hunter">Alyssa Hunter</option>
+          <option value="June Jambalaya">June Jambalaya</option>
         </select>
       </label>
       <br>
@@ -112,18 +119,16 @@
         </select>
       </label>
       <br>
-      <button type="submt">Make Guess</button>
+      <button type="submit">Make Guess</button>
+    </form>
   <% } %>
   <section>
-    <h1>S14 Winner Prediction</h1>
-    <h3><%= profile.guessSeason %> 
-    </h3>
     <h1>Weekly Guesses</h1>
     <% if (isSelf) { %>
-      <form action="">
-        <button>Edit Guess</button>
+      <form action="/profiles/<%= profile._id %>/editGuess">
+        <button>Edit Guess</button><br>
       </form>
-    <% } %>
+      <% } %>
     <table>
       <thead>
         <tr>

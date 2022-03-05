@@ -101,6 +101,26 @@ function update(req,res){
   })
 }
 
+function editGuessEpisode(req,res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+      res.render(`profiles/editGuess`, {
+        profile,
+        title: 'Update This Weeks Guess'
+    })
+  })
+}
+
+function updateGuessEpisode(req,res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+      res.render(`profiles/editGuess`, {
+        profile,
+        title: 'Update This Weeks Guess'
+    })
+  })
+}
+
 
 export {
   index,
@@ -110,4 +130,6 @@ export {
   create,
   editFavQueen,
   update,
+  editGuessEpisode,
+  updateGuessEpisode,
 }
