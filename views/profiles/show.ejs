@@ -14,12 +14,26 @@
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
     <% if (profile.favQueen === "" || profile.favQueen === undefined) { %> 
+      <section class="favQueen">
+        <h2>Add you all time favorite queen to your bio!</h2>
+        <form action="/profiles/favQueen" method="post">
+          <label>
+            Name:
+            <input type="text" name="favQueen" >
+          </label>
+          <button>Add Queen!</button>
+        </form>
+      </section>
+    <% } else { %>
+
+    <% } %>
+    <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 
       <h2>Who will be crowned America's next<br>Drag Superstar at the end of season 14?</h2>
-      <form action="/flights" method="post">
+      <form action="/profiles/guessSeason" method="post">
         <label>
           Season 14 Queens:
           <br>
-          <select name="favQueen">
+          <select name="guessSeason">
             <option value="Bosco">Bosco</option>
             <option value="DeJa Skye">DeJa Skye</option>
             <option value="Willow Pill">Willow Pill</option>
@@ -39,7 +53,7 @@
         <button type="submit">Make Guess</button>
       </form>
     <% } else { %>
-     <h3> I really hope <%= profile.favQueen %> is crowned America's next Drag Superstar!</h3>
+     <h3> I hope <%= profile.guessSeason %> is crowned America's next Drag Superstar!</h3>
     <% } %> 
     <br>
     <h2>Make a guess</h2>
@@ -59,14 +73,9 @@
           <option value="Daya Betty">Daya Betty</option>
           <option value="Jasmine Kennedie">Jasmine Kennedie</option>
           <option value="Jorgeous">Jorgeous</option>
-          <option value="Kerri Colby">Kerri Colby</option>
-          <option value="Maddy Morphosis">Maddy Morphosis</option>
-          <option value="Orion Story">Orion Story</option>
-          <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
-          <option value="Alyssa Hunter">Alyssa Hunter</option>
-          <option value="June Jambalaya">June Jambalaya</option>
         </select>
       </label>
+      <br>
       <label>
         Episode:
         <select name="episode">

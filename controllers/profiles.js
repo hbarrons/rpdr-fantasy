@@ -30,7 +30,24 @@ function show(req,res){
   })
 }
 
+function createSeasonGuess(req,res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.guessSeason = req.body.guessSeason
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+}
+
+function createFavQueen(req,res){
+  console.log('add favQueen')
+}
+
 export {
   index,
   show,
+  createSeasonGuess,
+  createFavQueen
 }

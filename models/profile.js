@@ -16,7 +16,6 @@ const profileSchema = new mongoose.Schema({
   avatar: String,
   guessSeason: {
     type: String,
-    enum: ['Bosco', 'DeJa Skye', 'Willow Pill', 'Angeria Paris VanMicheals', 'Lady Camden', 'Daya Betty', 'Jasmine Kennedie', 'Jorgeous', 'Kerri Colby', 'Maddy Morphosis', 'Orion Story', "Kornbred 'The Snack' Jete", 'Alyssa Hunter', 'June Jambalaya']
   },
   favQueen: {
     type: String,
