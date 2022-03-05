@@ -3,13 +3,19 @@
 
 <section>
   <h1>Change your favorite Queen</h1>
-  <form action="/profiles/favQueen?_method=PUT" method="POST">
+  <form action="/profiles/favorites?_method=PUT" method="POST">
     <label>
-      Name:
+      Queen:
       <input 
         type="text" 
-        name="favQueen" 
-        autocomplete="off"
+        name="queen" 
+      >
+    </label>
+    <label>
+      Quote:
+      <input 
+        type="text" 
+        name="quote" 
       >
     </label>
     <br>

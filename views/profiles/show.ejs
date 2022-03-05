@@ -68,8 +68,7 @@
     <br>
     <h2>Make a guess</h2>
     <form 
-      action="/"
-      autocomplete="off"
+      action="/profiles/guessEpisode"
       method="post"
     >
       <label>
@@ -110,6 +109,15 @@
       <br>
       <button type="submt">Make Guess</button>
   <% } %>
+  <section>
+    <h1>Display Weekly Guess Here:</h1>
+    <ul class="weekly-guesses">
+      <% profile.guessEpisode.forEach(guess => { %>
+        <li><%= guess.episode %>. <%= guess.name %>  </li>
+      <% }) %>
+    </ul>
+  </section>
+
 </main>
 
 

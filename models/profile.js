@@ -8,8 +8,16 @@ const guessSchema = new mongoose.Schema({
     type: Number,
     min: 1,
     max: 17,
-  } 
+  },
+}, {
+  timestamps: true
 })
+
+// const quotesSchema = new mongoose.Schema({
+//   quote: {
+//     type: String
+//   }
+// })
 
 const favoritesSchema = new mongoose.Schema({
   queen: {
@@ -17,7 +25,7 @@ const favoritesSchema = new mongoose.Schema({
   },
   quote: {
     type: String,
-  }
+  },
 })
 
 const profileSchema = new mongoose.Schema({
