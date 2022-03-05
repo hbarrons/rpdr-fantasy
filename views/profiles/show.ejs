@@ -14,18 +14,25 @@
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
     <% if (profile.favQueen === "" || profile.favQueen === undefined) { %> 
-      <section class="favQueen">
-        <h2>Add you all time favorite queen to your bio!</h2>
-        <form action="/profiles/favQueen" method="post">
+      <section class="favorites">
+        <h2>Add your favorite queen/quotes!</h2>
+        <form action="/profiles/favorites" method="post">
           <label>
             Name:
-            <input type="text" name="favQueen" >
+            <input type="text" name="queen" >
           </label>
-          <button>Add Queen!</button>
+          <br>
+          <label>
+            Qoute:
+            <input type="text" name="quote">
+          </label>
+          <br>
+          <button>Add to Profile</button>
         </form>
       </section>
     <% } else { %>
-      <h3>My favorite queen: <%= profile.favQueen %> </h3>
+      <h3>My favorite queen: <%= profile.favorites.queen %> </h3>
+      <h3>My favorite quote: <%= profile.favorites.quote %> </h3>
       <form action="/profiles/<%= profile._id %>/edit" method="GET">
         <button class="btn" type="submit">Change Queen</button>
       </form>

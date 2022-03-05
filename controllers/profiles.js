@@ -45,10 +45,11 @@ function createSeasonGuess(req,res){
   })
 }
 
-function createFavQueen(req,res){
+function create(req,res){
+  console.log('req.body: ', req.body)
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.favQueen = req.body.favQueen
+    profile.favorites = req.body
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
@@ -91,7 +92,7 @@ export {
   index,
   show,
   createSeasonGuess,
-  createFavQueen,
+  create,
   editFavQueen,
   update,
 }
