@@ -17,7 +17,7 @@
     <% if (profile.favQueen !== undefined) { %>
       <h3>Favorite queen: <%= profile.favQueen %> </h3>
       <h3>Favorite quotes: <% profile.favQuotes.forEach(quote => { %>
-       <div><%= quote %> <div>
+       <div><%= quote %> <div><br>
       <% }) %> </h3>
       <% if (isSelf) { %>
         <form action="/profiles/<%= profile._id %>/edit" method="GET">
@@ -45,13 +45,13 @@
           </form>        
         </section> 
         <% } %>
-    <% if (profile.queen === null) { %>
+    <% if (profile.guessSeason !== undefined) { %>
       <h1>S14 Winner Prediction</h1>
       <h3><%= profile.guessSeason %></h3>
     <% } %>
     <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 
       <h2>Who will be crowned America's next<br>Drag Superstar at the end of season 14?</h2>
-      <form action="/profiles/guessSeason" method="post">
+      <form action="/profiles/<% profile._id %> /guessSeason" method="post">
         <br>
         <select name="guessSeason">
           <option value="Bosco">Bosco</option>
