@@ -123,8 +123,9 @@ function updateFavQueen(req,res){
 
 function createFavQuotes(req,res){
   Profile.findById(req.user.profile._id)
+  // console.log('req.body.favQuotes: ', req.body.favQuotes)
   .then(profile => {
-    profile.favQuotes.push(req.body.favQuotes)
+    profile.favQuotes.push(req.body)
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${profile._id}/edit`)
@@ -137,7 +138,18 @@ function createFavQuotes(req,res){
 }
 
 function deleteQuote (req,res){
-  console.log('req.params: ', req.params)
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.favQuotes.remove({_id: req.params.favQuotesId})
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${profile._id}/edit`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 function editGuessEpisode(req,res){

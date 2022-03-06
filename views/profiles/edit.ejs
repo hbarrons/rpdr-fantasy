@@ -40,7 +40,7 @@
     <tbody>
       <% Object.values(profile.favQuotes).forEach(quote => { %>
         <tr>
-          <td><%= quote %></td>
+          <td><%= quote.quotes %></td>
           <td>
             <form action="/profiles/<%= profile._id %>/favQuotes/<%= quote._id %>?_method=DELETE" method="POST">
               <button type="submit">

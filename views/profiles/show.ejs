@@ -17,7 +17,7 @@
     <% if (profile.favQueen !== undefined) { %>
       <h3>Favorite queen: <%= profile.favQueen %> </h3>
       <h3>Favorite quotes: <% profile.favQuotes.forEach(quote => { %>
-       <div><%= quote %> <div><br>
+       <div><%= quote.quotes %> <div><br>
       <% }) %> </h3>
       <% if (isSelf) { %>
         <form action="/profiles/<%= profile._id %>/edit" method="GET">
