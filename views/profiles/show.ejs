@@ -16,7 +16,6 @@
     <h1>It's <%= profile.name %>!</h1>
     <% if (profile.favQueen !== undefined) { %>
       <h3>Favorite queen: <%= profile.favQueen %> </h3>
-      <% console.log(profile.favQuotes[0]) %> 
       <h3>Favorite quotes: <% profile.favQuotes.forEach(quote => { %>
        <div><%= quote %> <div>
       <% }) %> </h3>
@@ -30,7 +29,6 @@
   <% if (isSelf) { %>
       <section class="favorites">
         <% if (profile.favQueen === undefined) { %>
-          <% console.log('profile.queen:', profile.favQueen) %> 
           <h2>Add your favorite queen/quotes!</h2>
           <form action="/profiles/favorites" method="post">
             <label>

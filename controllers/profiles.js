@@ -110,7 +110,7 @@ function updateFavQueen(req,res){
     profile.favQueen = req.body.favQueen
     profile.save()
     .then(() => {
-      res.redirect(`/profiles/${req.user.profile._id}`)
+      res.redirect(`/profiles/${profile._id}/edit`)
     })
   })
   .catch(err => {
@@ -119,8 +119,19 @@ function updateFavQueen(req,res){
   })
 }
 
-function creatFavQuotes(){
-  console.log('add new quote')
+function createFavQuotes(req,res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.favQuotes.push(req.body.favQuotes)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${profile._id}/edit`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 function editGuessEpisode(req,res){
@@ -156,5 +167,5 @@ export {
   editGuessEpisode,
   updateGuessEpisode,
   updateFavQueen,
-  creatFavQuotes,
+  createFavQuotes,
 }
