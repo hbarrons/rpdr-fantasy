@@ -13,22 +13,18 @@ const guessSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const favoritesSchema = new mongoose.Schema({
-  queen: {
-    type: String,
-  },
-  quote: {
-    type: String,
-  },
-})
-
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
   guessSeason: {
     type: String,
   },
-  favorites: [favoritesSchema],
+  favQueen: {
+    type: String,
+  },
+  quotes:{
+    type: [],
+  },
   guessEpisode: [guessSchema],
 }, {
   timestamps: true

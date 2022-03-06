@@ -14,9 +14,9 @@
       </div>
     <% } %>
     <h1>It's <%= profile.name %>!</h1>
-    <% if (profile.favorites.length !== 0) { %>
-      <h3>Favorite queen: <%= profile.favorites[0].queen %> </h3>
-      <h3>Favorite quote: <%= profile.favorites[0].quote %> </h3>
+    <% if (profile.queen !== undefined) { %>
+      <h3>Favorite queen: <%= profile.queen %> </h3>
+      <h3>Favorite quote: <%= profile.quote[0].value %> </h3>
       <% if (isSelf) { %>
         <form action="/profiles/<%= profile._id %>/edit" method="GET">
           <button class="btn" type="submit">Update Profile</button>
@@ -25,25 +25,25 @@
     <% } %>
   </section>
   <% if (isSelf) { %>
-    <% if (profile.favorites.length === 0) { %> 
       <section class="favorites">
-        <h2>Add your favorite queen/quotes!</h2>
-        <form action="/profiles/favorites" method="post">
-          <label>
-            Name:
-            <input type="text" name="queen" >
-          </label>
-          <br>
-          <label>
-            Qoute:
-            <input type="text" name="quote">
-          </label>
-          <br>
-          <button>Add to Profile</button>
-        </form>
-      </section>
-    <% } %>
-    <% if (profile.guessSeason !== undefined) { %>
+        <% if (profile.queen === undefined) { %>
+          <h2>Add your favorite queen/quotes!</h2>
+          <form action="/profiles/favorites" method="post">
+            <label>
+              Name:
+              <input type="text" name="queen" >
+            </label>
+            <br>
+            <label>
+              Qoute:
+              <input type="text" name="quotes">
+            </label>
+            <br>
+            <button type="submit">Add to Profile</button>
+          </form>        
+        </section> 
+        <% } %>
+    <% if (profile.queen === null) { %>
       <h1>S14 Winner Prediction</h1>
       <h3><%= profile.guessSeason %></h3>
     <% } %>
