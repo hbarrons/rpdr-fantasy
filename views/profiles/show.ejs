@@ -14,9 +14,12 @@
       </div>
     <% } %>
     <h1>It's <%= profile.name %>!</h1>
-    <% if (profile.queen !== undefined) { %>
-      <h3>Favorite queen: <%= profile.queen %> </h3>
-      <h3>Favorite quote: <%= profile.quote[0].value %> </h3>
+    <% if (profile.favQueen !== undefined) { %>
+      <h3>Favorite queen: <%= profile.favQueen %> </h3>
+      <% console.log(profile.favQuotes[0]) %> 
+      <h3>Favorite quotes: <% profile.favQuotes.forEach(quote => { %>
+       <div><%= quote %> <div>
+      <% }) %> </h3>
       <% if (isSelf) { %>
         <form action="/profiles/<%= profile._id %>/edit" method="GET">
           <button class="btn" type="submit">Update Profile</button>
@@ -26,7 +29,8 @@
   </section>
   <% if (isSelf) { %>
       <section class="favorites">
-        <% if (profile.queen === undefined) { %>
+        <% if (profile.favQueen === undefined) { %>
+          <% console.log('profile.queen:', profile.favQueen) %> 
           <h2>Add your favorite queen/quotes!</h2>
           <form action="/profiles/favorites" method="post">
             <label>
@@ -35,7 +39,7 @@
             </label>
             <br>
             <label>
-              Qoute:
+              Quote:
               <input type="text" name="quotes">
             </label>
             <br>
@@ -125,9 +129,9 @@
   <section>
     <h1>Weekly Guesses</h1>
     <% if (isSelf) { %>
-      <form action="/profiles/<%= profile._id %>/editGuess">
-        <button>Edit Guess</button><br>
-      </form>
+      <form action="/profiles/<%= profile._id %>/edit" method="GET">
+        <button class="btn" type="submit">Change Guess</button>
+      </form> 
       <% } %>
     <table>
       <thead>

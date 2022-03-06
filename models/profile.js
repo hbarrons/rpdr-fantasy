@@ -22,7 +22,7 @@ const profileSchema = new mongoose.Schema({
   favQueen: {
     type: String,
   },
-  quotes:{
+  favQuotes:{
     type: [],
   },
   guessEpisode: [guessSchema],

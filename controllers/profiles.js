@@ -66,7 +66,7 @@ function create(req,res){
   .then(profile => {
     console.log('req.body: ', req.body)
     profile.favQueen = req.body.queen
-    profile.quotes = req.body.quotes
+    profile.favQuotes = req.body.quotes
     return profile.save(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
     })
@@ -77,19 +77,7 @@ function create(req,res){
   })
 }
 
-// function create(req,res){
-//   Profile.findById(req.user.profile._id, function(err, profile) {
-//     profile.queen = req.body.queen
-//     console.log('profile.queen: ', profile.queen)
-//     profile.quotes.push(req.body.quotes)
-//     console.log('profile.quote: ', profile.quote)
-//     profile.save(err => {
-//       res.redirect(`/profiles/${req.user.profile._id}`)
-//     })
-//   })
-// }
-
-function editFavQueen(req,res){
+function editProfile(req,res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
       res.render(`profiles/edit`, {
@@ -102,7 +90,9 @@ function editFavQueen(req,res){
 function update(req,res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.favorites = req.body
+    profile.favQueen = req.body.favQueen
+    profile.favQuotes.push(req.body.favQuotes)
+    console.log('req.body:', req.body)
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
@@ -112,6 +102,25 @@ function update(req,res){
     console.log(err)
     res.redirect("/")
   })
+}
+
+function updateFavQueen(req,res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.favQueen = req.body.favQueen
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
+function creatFavQuotes(){
+  console.log('add new quote')
 }
 
 function editGuessEpisode(req,res){
@@ -142,8 +151,10 @@ export {
   createSeasonGuess,
   createEpisodeGuess,
   create,
-  editFavQueen,
+  editProfile,
   update,
   editGuessEpisode,
   updateGuessEpisode,
+  updateFavQueen,
+  creatFavQuotes,
 }

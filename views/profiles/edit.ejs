@@ -3,25 +3,35 @@
 
 <section>
   <h1>Change your favorite Queen</h1>
-  <form action="/profiles/favorites?_method=PUT" method="POST">
+  <h3>Current Favorite Queen: <%= profile.favQueen %> </h3>
+  <form action="/profiles/favQueen?_method=PUT" method="POST">
     <label>
       Queen:
       <input 
         type="text" 
-        name="queen" 
-      >
-    </label>
-    <br>
-    <label>
-      Quote:
-      <input 
-        type="text" 
-        name="quote" 
+        name="favQueen" 
       >
     </label>
     <br>
     <button type="submit">Update Queen</button>
+  </form>
+  <form action="/profiles/favQuotes?_method=PUT" method="POST">
+    <br>
+    <label>
+      Add Quote:
+      <input 
+        type="text" 
+        name="favQuote" 
+      >
+    </label>
+    <br>
+    <button type="submit">Add Quote</button>
   </form>  
+</section>
+<section>
+  <h3>Favorite quotes: <% profile.favQuotes.forEach(quote => { %></h3>
+    <div><%= quote %> <div>
+      <% }) %> 
 </section>
 
 <%- include('../partials/footer') %>
