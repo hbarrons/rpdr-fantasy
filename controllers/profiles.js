@@ -64,12 +64,13 @@ function createEpisodeGuess(req,res) {
 function create(req,res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    console.log('req.body: ', req.body)
     profile.favQueen = req.body.queen
-    profile.favQuotes = req.body.quotes
-    return profile.save(() => {
+    profile.favQuotes.push(req.body.quotes)
+    profile.save(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
     })
+    console.log('profile: ', profile)
+    console.log('profile.favQuotes: ', profile.favQuotes)
   })
   .catch(err => {
     console.log(err)
@@ -90,9 +91,10 @@ function editProfile(req,res){
 function update(req,res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
+    console.log('req.body.favQuote.value: ', req.body.favQuotes.value)
     profile.favQueen = req.body.favQueen
-    profile.favQuotes.push(req.body.favQuotes)
-    console.log('req.body:', req.body)
+    profile.favQuotes.push(req.body.favQuotes.value)
+    // console.log('req.body:', req.body)
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
@@ -134,6 +136,10 @@ function createFavQuotes(req,res){
   })
 }
 
+function deleteQuote (req,res){
+  console.log('req.params: ', req.params)
+}
+
 function editGuessEpisode(req,res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
@@ -168,4 +174,5 @@ export {
   updateGuessEpisode,
   updateFavQueen,
   createFavQuotes,
+  deleteQuote,
 }

@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/edit.css"/>
 <%- include('../partials/nav') %>
 
 <section>
@@ -29,9 +30,88 @@
   </form>  
 </section>
 <section>
-  <h3>Favorite quotes: <% profile.favQuotes.forEach(quote => { %></h3>
-    <div><%= quote %> <div>
-      <% }) %> 
+  <table>
+    <thead>
+      <tr>
+        <th>Favorite Quotes</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Object.values(profile.favQuotes).forEach(quote => { %>
+        <tr>
+          <td><%= quote %></td>
+          <td>
+            <form action="/profiles/<%= profile._id %>/favQuotes/<%= quote._id %>?_method=DELETE" method="POST">
+              <button type="submit">
+                X
+              </button>
+            </form>
+          </td>
+        </tr>
+        <% }) %> 
+    </tbody>
+  </table>
 </section>
-
+<section>
+  <h1>This Weeks Guess</h1>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Episode</th>
+        <th>Queen</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>Current Guess</td>
+          <td><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %></td>
+          <td><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].name %></td>
+        </tr>
+        <tr>
+          <td>Update to:</td>
+          <td>
+            <form action="/profiles/guessEpisode?_method=PUT"" method="POST">
+              <select name="episode">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+              </select></td>
+              <td>
+                <select name="name">
+                  <option value="Bosco">Bosco</option>
+                  <option value="DeJa Skye">DeJa Skye</option>
+                  <option value="Willow Pill">Willow Pill</option>
+                  <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
+                  <option value="Lady Camden">Lady Camden</option>
+                  <option value="Daya Betty">Daya Betty</option>
+                  <option value="Jasmine Kennedie">Jasmine Kennedie</option>
+                  <option value="Jorgeous">Jorgeous</option>
+                  <option value="Kerri Colby">Kerri Colby</option>
+                  <option value="Maddy Morphosis">Maddy Morphosis</option>
+                  <option value="Orion Story">Orion Story</option>
+                  <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
+                  <option value="Alyssa Hunter">Alyssa Hunter</option>
+                  <option value="June Jambalaya">June Jambalaya</option>
+                </select></td>
+        </tr>
+    </tbody>
+  </table>
+  <button type="submit">Update Guess</button>
+  </form>
+</section>
 <%- include('../partials/footer') %>

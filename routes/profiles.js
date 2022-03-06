@@ -14,6 +14,8 @@ router.post('/favQuotes', isLoggedIn, profilesCtrl.createFavQuotes)
 router.post('/guessEpisode', isLoggedIn, profilesCtrl.createEpisodeGuess)
 router.get('/:id/editGuess', isLoggedIn, profilesCtrl.editGuessEpisode)
 router.put('/:id', isLoggedIn, profilesCtrl.updateGuessEpisode)
+router.delete('/:id/favQuotes/:favQuotesId', isLoggedIn, profilesCtrl.deleteQuote)
+router.put('/:id/guessEpisode', isLoggedIn, profilesCtrl.updateGuessEpisode)
 
 
 
