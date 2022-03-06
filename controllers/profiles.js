@@ -65,7 +65,7 @@ function create(req,res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.favQueen = req.body.queen
-    profile.favQuotes.push(req.body.quotes)
+    profile.favQuotes.push(req.body)
     profile.save(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
     })
@@ -148,17 +148,26 @@ function editGuessEpisode(req,res){
         title: 'Update This Weeks Guess'
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 function updateGuessEpisode(req,res){
-  console.log('update guess')
-  // Profile.findById(req.user.profile._id)
-  // .then(profile => {
-  //     res.render(`profiles/editGuess`, {
-  //       profile,
-  //       title: 'Update This Weeks Guess'
-  //   })
-  // })
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.guessEpisode.pop()
+    profile.guessEpisode.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${profile._id}/edit`)
+    })
+    })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 
