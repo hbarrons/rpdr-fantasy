@@ -69,6 +69,15 @@ main {
   padding-left: 4px;
 }
 
+.welcome {
+  font-family: 'Racing Sans One', cursive;
+}
+
+.ruFace {
+  max-width:350px;
+  height:auto;
+}
+
 h1 {
   font-size: 3.6rem;
 }
