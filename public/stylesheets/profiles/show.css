@@ -1,39 +1,70 @@
 .profile-details {
   text-align: center;
+  display: flex;
+  flex-flow: wrap;
+  align-items: stretch;
 }
 
 .main-profile {
   display: grid;
   grid-template-columns: 25% 75%;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 
 .profile-details {
   padding: 0;
-  margin: 0;
   display: flex;
   flex-flow: wrap;
   align-items: flex-start;
-  height: 100vh;
+  height: 100%;
 }
 
 .profile-name {
+  margin: auto;
+  display: flex;
   font-size: 25px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.profile.image {
+  margin: auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  height: stretch;
+  width: stretch;
+  position: relative;
+}
+
+img {
+  margin: auto;
+  position: relative;
+  border: 2px solid white;
+  /* padding-left: 60px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .guesses {
-  background-color: rgb(175, 172, 172);
+  background-color:  rgb(253,255,245);
+  /* border-left: 3px solid #D1AC60; */
   border-left: 3px solid #DF2C7B;
   display: flex;
   align-items: flex-start;
   flex-flow: wrap;
-  margin: 0;
+  margin: auto;
+  padding: 0;
   justify-content: flex-start;
 }
 
-.weekly-guess-table {
-  margin: auto;
+
+.weekly-guess-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .season-prediction {
@@ -46,7 +77,8 @@
 }
 
 .fav-title {
-
+  font-size: 15px;
+  font-family: 'Racing Sans One', cursive;
 }
 
 .fav-queen {
@@ -58,9 +90,41 @@
   padding: 0 10px 0 10px;
 }
 
-button {
-  background-color: rgb(194, 152, 194);
+.season-prediction {
   font-size: 20px;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.season-guess {
+  margin: auto;
+}
+
+.s14-winner {
+  font-family: 'Racing Sans One', cursive;
+}
+
+.maxi {
+  font-family: 'Racing Sans One', cursive;
+}
+
+.table-title {
+  font-family: 'Racing Sans One', cursive;
+}
+
+button {
+  top: auto;
+  border: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+  border-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+  background-color: #4D4249;
+  font-size: 15px;
   color: white;
 
 }
@@ -76,6 +140,11 @@ button:hover {
   font-size: 20px;
 }
 
+.weekly-guess-table {
+  margin: auto;
+  font-size: 2rem;
+}
+
 table {
   font-size: 2rem;
   margin: auto;
@@ -84,6 +153,7 @@ table {
 table thead th {
   padding: 5px;
   border: 2px solid black;
+  font-family: 'Racing Sans One', cursive;
   color: rgb(30, 30, 30);
 }
 

@@ -5,10 +5,15 @@
 <body>
   <nav>
     <% if (user) { %>
-      <a href="/profiles/<%= user.profile._id %>">My Profile</a>
-      <a href="/profiles">All Players</a>
-      <a href="/auth/logout">
+      <div>
+        <a href="/profiles/<%= user.profile._id %>">My Profile</a>
+        <a href="/profiles">All Players</a>
+      </div>
+      <h1 class="title">RPDR Fantasy</h1>
+      <div>
+        <a href="/auth/logout">
         <button type="submit">Logout</button>
+      </div> 
       </a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">

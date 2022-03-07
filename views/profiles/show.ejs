@@ -5,7 +5,7 @@
 <main class="main-profile">
   <section class="profile-details">
     <% if (profile.avatar) { %>
-      <div>
+      <div class="profile-image">
         <img 
           src="<%= profile.avatar %>" 
           alt="<%= profile.name %> avatar"
@@ -49,9 +49,9 @@
         </section> 
         <% } %>
     <% if (profile.guessSeason !== undefined) { %>
-      <section class="s14-winner">
-        <h1>S14 Winner Prediction</h1>
-        <h3 class="season-prediction"><%= profile.guessSeason %></h3>
+      <section class="season-guess">
+        <h1 class="s14-winner">S14 Winner Prediction</h1>
+        <div class="season-prediction"><%= profile.guessSeason %></div>
       </section>
     <% } %>
     <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 
@@ -78,59 +78,61 @@
       </form>
     <% } %>
     <br>
-    <h2>Who will win this week's Maxi Challenge?</h2>
-    <form 
-      action="/profiles/guessEpisode"
-      method="post"
-      class="weekly-guess-form"
-    >
-      <label>
-        Name:
-        <select name="name">
-          <option value="Bosco">Bosco</option>
-          <option value="DeJa Skye">DeJa Skye</option>
-          <option value="Willow Pill">Willow Pill</option>
-          <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
-          <option value="Lady Camden">Lady Camden</option>
-          <option value="Daya Betty">Daya Betty</option>
-          <option value="Jasmine Kennedie">Jasmine Kennedie</option>
-          <option value="Jorgeous">Jorgeous</option>
-          <option value="Kerri Colby">Kerri Colby</option>
-          <option value="Maddy Morphosis">Maddy Morphosis</option>
-          <option value="Orion Story">Orion Story</option>
-          <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
-          <option value="Alyssa Hunter">Alyssa Hunter</option>
-          <option value="June Jambalaya">June Jambalaya</option>
-        </select>
-      </label>
-      <br>
-      <label>
-        Episode:
-        <select name="episode">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-        </select>
-      </label>
-      <br>
-      <button type="submit">Make Guess</button>
-    </form>
+    <section>
+      <h2 class="maxi">Who will win this week's Maxi Challenge?</h2>
+      <form 
+        action="/profiles/guessEpisode"
+        method="post"
+        class="weekly-guess-form"
+      >
+        <label>
+          Name:
+          <select name="name">
+            <option value="Bosco">Bosco</option>
+            <option value="DeJa Skye">DeJa Skye</option>
+            <option value="Willow Pill">Willow Pill</option>
+            <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
+            <option value="Lady Camden">Lady Camden</option>
+            <option value="Daya Betty">Daya Betty</option>
+            <option value="Jasmine Kennedie">Jasmine Kennedie</option>
+            <option value="Jorgeous">Jorgeous</option>
+            <option value="Kerri Colby">Kerri Colby</option>
+            <option value="Maddy Morphosis">Maddy Morphosis</option>
+            <option value="Orion Story">Orion Story</option>
+            <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
+            <option value="Alyssa Hunter">Alyssa Hunter</option>
+            <option value="June Jambalaya">June Jambalaya</option>
+          </select>
+        </label>
+        <br>
+        <label>
+          Episode:
+          <select name="episode">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+          </select>
+        </label>
+        <br>
+        <button type="submit">Make Guess</button>
+      </form>
+    </section>
   <% } %>
   <section class="weekly-guess-table">
-    <h1>Weekly Guesses</h1>
+    <h1 class="table-title">Weekly Guesses</h1>
     <% if (isSelf) { %>
       <form action="/profiles/<%= profile._id %>/edit" method="GET">
         <button class="btn" type="submit">Change Guess</button>
