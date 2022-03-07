@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/stylesheets/profiles/show.css" />
 <%- include('../partials/nav') %>
 
-<main>
+<main class="main-profile">
   <section class="profile-details">
     <% if (profile.avatar) { %>
       <div>
@@ -13,12 +13,15 @@
         >
       </div>
     <% } %>
-    <h1>It's <%= profile.name %>!</h1>
+    <h1 class="profile-name"><%= profile.name %></h1>
     <% if (profile.favQueen !== undefined) { %>
-      <h3>Favorite queen: <%= profile.favQueen %> </h3>
-      <h3>Favorite quotes: <% profile.favQuotes.forEach(quote => { %>
-       <div><%= quote.quotes %> <div><br>
-      <% }) %> </h3>
+      <section class="favs-section">
+        <h3 class="fav-title">Favorite queen: </h3>
+        <div class="fav-queen"><%= profile.favQueen %></div>
+        <h3 class="fav-title">Favorite quotes: </h3><% profile.favQuotes.forEach(quote => { %>
+         <div class="quotes"><%= quote.quotes %> <div><br>
+        <% }) %> 
+      </section>
       <% if (isSelf) { %>
         <form action="/profiles/<%= profile._id %>/edit" method="GET">
           <button class="btn" type="submit">Update Profile</button>
@@ -27,7 +30,7 @@
     <% } %>
   </section>
   <% if (isSelf) { %>
-      <section class="favorites">
+      <section class="guesses">
         <% if (profile.favQueen === undefined) { %>
           <h2>Add your favorite queen/quotes!</h2>
           <form action="/profiles/favorites" method="post">
@@ -46,8 +49,10 @@
         </section> 
         <% } %>
     <% if (profile.guessSeason !== undefined) { %>
-      <h1>S14 Winner Prediction</h1>
-      <h3><%= profile.guessSeason %></h3>
+      <section class="s14-winner">
+        <h1>S14 Winner Prediction</h1>
+        <h3 class="season-prediction"><%= profile.guessSeason %></h3>
+      </section>
     <% } %>
     <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 
       <h2>Who will be crowned America's next<br>Drag Superstar at the end of season 14?</h2>
@@ -124,7 +129,7 @@
       <button type="submit">Make Guess</button>
     </form>
   <% } %>
-  <section>
+  <section class="weekly-guess-table">
     <h1>Weekly Guesses</h1>
     <% if (isSelf) { %>
       <form action="/profiles/<%= profile._id %>/edit" method="GET">

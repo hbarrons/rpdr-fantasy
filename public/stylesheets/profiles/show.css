@@ -2,6 +2,80 @@
   text-align: center;
 }
 
+.main-profile {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-details {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.profile-name {
+  font-size: 25px;
+}
+
+.guesses {
+  background-color: rgb(175, 172, 172);
+  border-left: 3px solid #DF2C7B;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: wrap;
+  margin: 0;
+  justify-content: flex-start;
+}
+
+.weekly-guess-table {
+  margin: auto;
+}
+
+.season-prediction {
+  text-align: center;
+}
+
+.favs-section {
+  margin: 0;
+  padding: 0;
+}
+
+.fav-title {
+
+}
+
+.fav-queen {
+  font-size: 20px;
+}
+
+.quotes {
+  font-size: 20px;
+  padding: 0 10px 0 10px;
+}
+
+button {
+  background-color: rgb(194, 152, 194);
+  font-size: 20px;
+  color: white;
+
+}
+
+button.siwg {
+  background-color: rgb(162, 201, 239);
+  font-size: 20px;
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(156, 42, 156);
+  font-size: 20px;
+}
+
 table {
   font-size: 2rem;
   margin: auto;
