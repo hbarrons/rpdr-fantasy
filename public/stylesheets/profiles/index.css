@@ -1,0 +1,52 @@
+a {
+  color: white;
+}
+
+img {
+  margin: auto;
+  position: relative;
+  border: 2px solid white;
+  /* padding-left: 60px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: rgb(156, 42, 156);
+  font-size: 20px;
+}
+
+table {
+  font-size: 2rem;
+  margin: auto;
+}
+
+.profile-card {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.container {
+  display: flex;
+  flex-flow: wrap;
+}
+
+table thead th {
+  padding: 5px;
+  border: 2px solid black;
+  font-family: 'Racing Sans One', cursive;
+  color: rgb(30, 30, 30);
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid black;
+  color: rgb(30, 30, 30)
+}
+
+.col {
+  display: flex;
+  flex-flow: wrap;
+}

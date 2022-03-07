@@ -2,8 +2,15 @@
 <link rel="stylesheet" href="/stylesheets/profiles/show.css" />
 <%- include('../partials/nav') %>
 
-<main class="main-profile">
-  <section class="profile-details">
+<main <% if (isSelf) { %>
+  class="main-profile"
+<% } else { %> 
+  class="main-profile-player"
+  <% } %> >
+  <section <% if (isSelf) { %>
+    class="profile-details"
+  <% } else { %> class="profile-details-player"
+  <% } %> >
     <% if (profile.avatar) { %>
       <div class="profile-image">
         <img 
@@ -48,12 +55,6 @@
           </form>        
         </section> 
         <% } %>
-    <% if (profile.guessSeason !== undefined) { %>
-      <section class="season-guess">
-        <h1 class="s14-winner">S14 Winner Prediction</h1>
-        <div class="season-prediction"><%= profile.guessSeason %></div>
-      </section>
-    <% } %>
     <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 
       <h2>Who will be crowned America's next<br>Drag Superstar at the end of season 14?</h2>
       <form action="/profiles/<% profile._id %> /guessSeason" method="post">
@@ -78,8 +79,10 @@
       </form>
     <% } %>
     <br>
-    <section class="maxi-section">
-      <h2 class="maxi">Who will win this week's Maxi Challenge?</h2>
+    <section class="maxi-section" <% if (isSelf === false) { %>
+      display="none">
+       <% } %> 
+      <div class="maxi-title">Who will win this week's Maxi Challenge?</div>
       <form 
         action="/profiles/guessEpisode"
         method="post"
@@ -131,13 +134,22 @@
       </form>
     </section>
   <% } %>
-  <section class="weekly-guess-table">
+  <% if (profile.guessSeason !== undefined) { %>
+    <section <% if (isSelf) { %>
+     class="season-guess"
+    <% } else { %>
+      class="season-guess-player"
+      <% } %> >
+      <h1 class="s14-winner">S14 Winner Prediction</h1>
+      <div class="season-prediction"><%= profile.guessSeason %></div>
+    </section>
+  <% } %>
+  <section <% if (isSelf) { %>
+    class="weekly-guess-table"
+  <% } else { %> 
+      class="player-weekly-guess"
+    <% } %> >
     <h1 class="table-title">Weekly Guesses</h1>
-    <% if (isSelf) { %>
-      <form action="/profiles/<%= profile._id %>/edit" method="GET">
-        <button class="btn" type="submit">Change Guess</button>
-      </form> 
-      <% } %>
     <table>
       <thead>
         <tr>
@@ -154,6 +166,11 @@
         <% }) %>
       </tbody>
     </table>
+    <% if (isSelf) { %>
+      <form action="/profiles/<%= profile._id %>/edit" method="GET">
+        <button class="btn" type="submit">Change Guess</button>
+      </form> 
+      <% } %>
   </section>
 </main>
 

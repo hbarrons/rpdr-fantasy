@@ -40,6 +40,11 @@ h1.title {
   text-align: center;
   font-family: 'Racing Sans One', cursive;
   font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 50px;
 }
 
 main {
@@ -49,12 +54,19 @@ main {
   flex-direction: column;
 }
 
-div {
+.profile-card {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.nav-link {
   display: flex;
   align-items: baseline;
   flex-flow: wrap;
   justify-content: center;
-  padding: 20px;
+  padding-top: 30px;
+  font-size: 14px;
+  padding-left: 4px;
 }
 
 h1 {
