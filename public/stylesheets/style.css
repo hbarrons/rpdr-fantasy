@@ -29,7 +29,7 @@ nav {
   background-color: #DF2C7B;
   font-size: 1.6rem;
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 8% 8% 8% 60% 16%;
   grid-template-rows: 50px;
   border-bottom: 3px solid #e73f88;
   height: 70px;
@@ -102,8 +102,29 @@ nav > a {
   justify-content: center;
 }
 
-.btn {
-  margin: 1.6rem 0;
+button.siwg {
+  background-color: rgb(162, 201, 239);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: auto;
+  outline: none;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .link {
