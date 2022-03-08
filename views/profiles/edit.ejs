@@ -2,101 +2,106 @@
 <link rel="stylesheet" href="/stylesheets/profiles/edit.css"/>
 <%- include('../partials/nav') %>
 
-<section>
-  <h1>Change your favorite Queen</h1>
-  <h3>Current Favorite Queen: <%= profile.favQueen %> </h3>
-  <form action="/profiles/favQueen?_method=PUT" method="POST">
-    <label>
-      Queen:
-      <input 
-        type="text" 
-        name="favQueen" 
-      >
-    </label>
-    <br>
-    <button type="submit">Update Queen</button>
-  </form>
-  <form action="/profiles/favQuotes" method="POST">
-    <br>
-    <label>
-      Add Quote:
-      <input 
-        type="text" 
-        name="quotes" 
-      >
-    </label>
-    <br>
-    <button type="submit">Add Quote</button>
-  </form>  
-</section>
-<section>
-  <table>
-    <thead>
-      <tr>
-        <th>Favorite Quotes</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% Object.values(profile.favQuotes).forEach(quote => { %>
+<main>
+  <section class="update-favs">
+    <h1 class="page-title">Update Profile</h1>
+    <h3 class="current-fav-title">Current Favorite Queen:</h3>
+    <h3> <%= profile.favQueen %> </h3>
+    <form action="/profiles/favQueen?_method=PUT" method="POST">
+      <label>
+        Queen:
+        <input 
+          type="text" 
+          name="favQueen" 
+        >
+      </label>
+      <br>
+      <br>
+      <button type="submit">Update Queen</button>
+    </form>
+    <form action="/profiles/favQuotes" method="POST">
+      <br>
+      <label>
+        Add Quote:
+        <input 
+          type="text" 
+          name="quotes" 
+        >
+      </label>
+      <br>
+      <br>
+      <button type="submit">Add Quote</button>
+    </form>  
+    <table>
+      <thead>
         <tr>
-          <td><%= quote.quotes %></td>
-          <td>
-            <form action="/profiles/<%= profile._id %>/favQuotes/<%= quote._id %>?_method=DELETE" method="POST">
-              <button type="submit">
-                X
-              </button>
-            </form>
-          </td>
+          <th>Favorite Quotes</th>
+          <th>Delete</th>
         </tr>
-        <% }) %> 
-    </tbody>
-  </table>
-</section>
-<section>
-  <h1>This Weeks Guess</h1>
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Episode</th>
-        <th>Queen</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>Current Guess</td>
-          <td><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %></td>
-          <td><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].name %></td>
-        </tr>
-        <tr>
-          <td>Update to:</td>
-          <td>
-            <form action="/profiles/<%= profile._id %>/guessEpisode?_method=PUT" method="POST">
-              <select name="episode">
-                <option value="<%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %>"><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %> </option>
-              </select></td>
+      </thead>
+      <tbody>
+        <% Object.values(profile.favQuotes).forEach(quote => { %>
+          <tr>
+            <td><%= quote.quotes %></td>
+            <td>
+              <form action="/profiles/<%= profile._id %>/favQuotes/<%= quote._id %>?_method=DELETE" method="POST">
+                <button type="submit">
+                  X
+                </button>
+              </form>
+            </td>
+          </tr>
+          <% }) %> 
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <% if (profile.guessEpisode.length !== 0) { %>   
+      <h1>This Weeks Guess</h1>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Episode</th>
+            <th>Queen</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Current Guess</td>
+              <td><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %></td>
+              <td><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].name %></td>
+            </tr>
+            <tr>
+              <td>Update to:</td>
               <td>
-                <select name="name">
-                  <option value="Bosco">Bosco</option>
-                  <option value="DeJa Skye">DeJa Skye</option>
-                  <option value="Willow Pill">Willow Pill</option>
-                  <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
-                  <option value="Lady Camden">Lady Camden</option>
-                  <option value="Daya Betty">Daya Betty</option>
-                  <option value="Jasmine Kennedie">Jasmine Kennedie</option>
-                  <option value="Jorgeous">Jorgeous</option>
-                  <option value="Kerri Colby">Kerri Colby</option>
-                  <option value="Maddy Morphosis">Maddy Morphosis</option>
-                  <option value="Orion Story">Orion Story</option>
-                  <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
-                  <option value="Alyssa Hunter">Alyssa Hunter</option>
-                  <option value="June Jambalaya">June Jambalaya</option>
-                </select></td>
-        </tr>
-    </tbody>
-  </table>
-  <button type="submit">Update Guess</button>
-  </form>
-</section>
+                <form action="/profiles/<%= profile._id %>/guessEpisode?_method=PUT" method="POST">
+                  <select name="episode">
+                    <option value="<%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %>"><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %> </option>
+                  </select></td>
+                  <td>
+                    <select name="name">
+                      <option value="Bosco">Bosco</option>
+                      <option value="DeJa Skye">DeJa Skye</option>
+                      <option value="Willow Pill">Willow Pill</option>
+                      <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
+                      <option value="Lady Camden">Lady Camden</option>
+                      <option value="Daya Betty">Daya Betty</option>
+                      <option value="Jasmine Kennedie">Jasmine Kennedie</option>
+                      <option value="Jorgeous">Jorgeous</option>
+                      <option value="Kerri Colby">Kerri Colby</option>
+                      <option value="Maddy Morphosis">Maddy Morphosis</option>
+                      <option value="Orion Story">Orion Story</option>
+                      <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
+                      <option value="Alyssa Hunter">Alyssa Hunter</option>
+                      <option value="June Jambalaya">June Jambalaya</option>
+                    </select></td>
+            </tr>
+        </tbody>
+      </table>
+      <button type="submit">Update Guess</button>
+      </form>
+    </section>
+</main>
+    <% } %>
 <%- include('../partials/footer') %>

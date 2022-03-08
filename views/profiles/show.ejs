@@ -62,7 +62,7 @@
       <% } %>
       ">
         <h2>Who will be crowned America's next Drag Superstar?</h2>
-        <form action="/profiles/<% profile._id %> /guessSeason" method="post">
+        <form class="drag-superstar" action="/profiles/<% profile._id %> /guessSeason" method="post">
           <br>
           <select name="guessSeason">
             <option value="Bosco">Bosco</option>
@@ -80,6 +80,8 @@
             <option value="Alyssa Hunter">Alyssa Hunter</option>
             <option value="June Jambalaya">June Jambalaya</option>
           </select>
+          <br>
+          <br>
           <button type="submit">Make Guess</button>
         </form>
       </section>

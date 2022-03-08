@@ -31,6 +31,10 @@
   display: inline;
 }
 
+.drag-superstar {
+  display: inline;
+}
+
 .profile-details-player {
   background-color: #fbdeeb;
   border-right: 3px solid #DF2C7B;
@@ -78,7 +82,6 @@ img {
 
 .weekly-guess-form {
   display: inline;
-  align-items: center;
 }
 
 .season-prediction {
@@ -97,6 +100,7 @@ img {
   display: inline;
   margin: auto;
   padding: 0;
+  margin-bottom: 40px;
 }
 
 .favs-section {
@@ -155,7 +159,7 @@ img {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   padding: 0;
-  padding-top: 30px;
+  padding-top: 80px;
   display: flex;
   flex-flow: wrap;
   align-items: flex-start;
@@ -265,7 +269,7 @@ table td {
   color: rgb(30, 30, 30)
 }
 
-/* .hide {
+.hide {
   display: none;
-} */
+}
 
