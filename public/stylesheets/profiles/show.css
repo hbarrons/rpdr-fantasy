@@ -76,7 +76,7 @@ img {
   background-color:  rgb(253,255,245);
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 300px;
+  grid-template-rows: 200px;
   margin: 0;
   padding: 0;
   justify-content: flex-start;
@@ -131,10 +131,9 @@ img {
   grid-row: 1 / 2;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-flow: wrap;
-  align-items: flex-start;
+  display: inline;
   text-align: center;
+  height: 200px;
 }    
 
 .season-guess-player {
