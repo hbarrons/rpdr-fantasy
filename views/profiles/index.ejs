@@ -37,9 +37,15 @@
                   <p class="card-title fs-3 text-dark"><%= profile.name %></p>
                 </a>
                 <div>
+                  
+                  <% if (profile.guessEpisode.length === 0) { %>
+                   <div>No Guesses Yet</div>
+                  <% } else { %>
                   <div>This Weeks Guess</div>
-                  <div>Episode: <%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %><br>
+                   <div>Episode: <%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %>
+                  <br>
                   <%= profile.guessEpisode[(profile.guessEpisode.length) - 1].name %>
+                  <% } %> 
                 </div>
                 </div>
               </div>

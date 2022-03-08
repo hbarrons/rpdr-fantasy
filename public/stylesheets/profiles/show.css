@@ -1,10 +1,3 @@
-.profile-details {
-  text-align: center;
-  display: flex;
-  flex-flow: wrap;
-  align-items: stretch;
-}
-
 .main-profile {
   display: grid;
   grid-template-columns: 25% 75%;
@@ -21,12 +14,21 @@
 
 .profile-details {
   background-color: #fbdeeb;
+  border-right: 3px solid #DF2C7B;
   padding: 0;
-  display: flex;
+  display: inline;
   flex-flow: wrap;
   align-items: flex-start;
   height: 100%;
   position: sticky;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  height: 100%;
+}
+
+.queen-quote-input {
+  font-family: 'Racing Sans One';
+  display: inline;
 }
 
 .profile-details-player {
@@ -35,7 +37,6 @@
   grid-row: 1 / 3;
   padding: 0;
   display: inline;
-  flex-flow: wrap;
   height: 100%;
 }
 
@@ -60,7 +61,6 @@ img {
   margin: auto;
   position: relative;
   border: 2px solid white;
-  /* padding-left: 60px; */
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -68,8 +68,6 @@ img {
 
 .guesses {
   background-color:  rgb(253,255,245);
-  /* border-left: 3px solid #D1AC60; */
-  border-left: 3px solid #DF2C7B;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 200px;
@@ -83,7 +81,6 @@ img {
   align-items: center;
 }
 
-
 .season-prediction {
   text-align: center;
   overflow: hidden;
@@ -92,6 +89,14 @@ img {
   margin: auto;
   font-size: 20px;
   padding-top: 10px;
+}
+
+.season-winner {
+  font-family: 'Racing Sans One', cursive;
+  text-align: center;
+  display: inline;
+  margin: auto;
+  padding: 0;
 }
 
 .favs-section {
@@ -142,7 +147,7 @@ img {
 .maxi-title {
   font-family: 'Racing Sans One', cursive;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .maxi-section {
@@ -259,4 +264,8 @@ table td {
   border: 2px solid black;
   color: rgb(30, 30, 30)
 }
+
+/* .hide {
+  display: none;
+} */
 
