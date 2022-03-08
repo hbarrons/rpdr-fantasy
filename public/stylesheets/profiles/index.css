@@ -24,6 +24,15 @@ table {
   margin: auto;
 }
 
+main {
+  background-color: rgb(253,255,245);
+  height: 100vh;
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-start;
+  width: 100%;
+}
+
 .guess {
   font-size: 14px;
 }
@@ -66,7 +75,7 @@ table td {
 .col {
   display: flex;
   flex-flow: wrap;
-
+  width: 100%;
 }
 
 .week-guess {
