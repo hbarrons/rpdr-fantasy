@@ -47,14 +47,16 @@
                 <input type="text" name="queen" >
               </label>
               <br>
+              <br>
               <label>
                 Quote:
                 <input type="text" name="quotes">
               </label>
+              <br>
+              <br>
+              <button type="submit">Add to Profile</button>
+            </form>        
           </section>
-            <br>
-            <button type="submit">Add to Profile</button>
-          </form>        
         <% } %>
     <% if (profile.guessSeason === "" || profile.guessSeason === undefined) { %> 
       <section class="season-winner <% if (profile.favQueen === undefined) { %>
@@ -103,22 +105,39 @@
         <label>
           Episode:
           <select name="episode">
-            <option value="1">1</option>
+            <% if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === undefined) { %>
+              <option value="1">1</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 1){%>
             <option value="2">2</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 2){%>
             <option value="3">3</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 3){%>
             <option value="4">4</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 4){%>
             <option value="5">5</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 5){%>
             <option value="6">6</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 6){%>
             <option value="7">7</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 7){%>
             <option value="8">8</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 8){%>
             <option value="9">9</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 9){%>
             <option value="10">10</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 10){%>
             <option value="11">11</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 11){%>
             <option value="12">12</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 12){%>
             <option value="13">13</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 13){%>
             <option value="14">14</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 14){%>
             <option value="15">15</option>
+            <% } else if (profile.guessEpisode[profile.guessEpisode.length - 1].episode === 15){%>
             <option value="16">16</option>
+            <% } %> 
           </select>
         </label>
         <br>

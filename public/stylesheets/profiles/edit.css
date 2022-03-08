@@ -49,11 +49,6 @@ button {
   align-items: center;
 }
 
-button.siwg {
-  background-color: rgb(162, 201, 239);
-  font-size: 20px;
-  color: white;
-}
 
 button:hover {
   background-color: rgb(156, 42, 156);
@@ -78,6 +73,36 @@ button:hover {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  align-items: center;
+}
+
+button.siwg {
+  background-color: rgb(156, 42, 156);
+  font-size: 20px;
+  color: white;
+}
+
+button.siwg:hover {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: auto;
+  outline: none;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
   align-items: center;
 }
 

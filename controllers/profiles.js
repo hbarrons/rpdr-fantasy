@@ -46,7 +46,6 @@ function createSeasonGuess(req,res){
 }
 
 function createEpisodeGuess(req,res) {
-  console.log(req.body)
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.guessEpisode.push(req.body)
@@ -69,8 +68,6 @@ function create(req,res){
     profile.save(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
     })
-    console.log('profile: ', profile)
-    console.log('profile.favQuotes: ', profile.favQuotes)
   })
   .catch(err => {
     console.log(err)
@@ -91,10 +88,8 @@ function editProfile(req,res){
 function update(req,res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    console.log('req.body.favQuote.value: ', req.body.favQuotes.value)
     profile.favQueen = req.body.favQueen
     profile.favQuotes.push(req.body.favQuotes.value)
-    // console.log('req.body:', req.body)
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
@@ -123,7 +118,6 @@ function updateFavQueen(req,res){
 
 function createFavQuotes(req,res){
   Profile.findById(req.user.profile._id)
-  // console.log('req.body.favQuotes: ', req.body.favQuotes)
   .then(profile => {
     profile.favQuotes.push(req.body)
     profile.save()
