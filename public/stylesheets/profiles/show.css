@@ -46,12 +46,17 @@
   height: 100%;
 }
 
+label {
+  color: #DF2C7B;
+}
+
 .profile-name {
   margin: auto;
   display: flex;
   font-size: 25px;
   align-items: flex-start;
   justify-content: center;
+  color: #DF2C7B;
   grid-row: 1 / 2;
   grid-column: 1 / 2;
 }
@@ -113,8 +118,9 @@ img {
 }
 
 .fav-title {
-  font-size: 15px;
+  font-size: 20px;
   font-family: 'Racing Sans One', cursive;
+  color: #DF2C7B
 }
 
 .fav-queen {
@@ -141,18 +147,23 @@ img {
   grid-row: 1 / 2;
   margin: auto;
   padding: 0;
+  display: inline;
+  text-align: center;
+  padding-top: 40px;
 }
 
 .s14-winner {
   font-family: 'Racing Sans One', cursive;
   text-align: center;
   margin: 0;
+  color: #DF2C7B
 }
 
 .maxi-title {
   font-family: 'Racing Sans One', cursive;
   text-align: center;
   font-size: 30px;
+  color: #DF2C7B
 }
 
 .maxi-section {
@@ -169,6 +180,7 @@ img {
   font-family: 'Racing Sans One', cursive;
   text-align: center;
   margin: 5px;
+  color: #DF2C7B
 }
 
 button {
@@ -282,15 +294,15 @@ table {
 
 table thead th {
   padding: 5px;
-  border: 2px solid black;
+  border: 2px solid #DF2C7B;
   font-family: 'Racing Sans One', cursive;
-  color: rgb(30, 30, 30);
+  color: #DF2C7B
 }
 
 table td {
   padding: 10px;
   text-align: center;
-  border: 2px solid black;
+  border: 2px solid #DF2C7B;
   color: rgb(30, 30, 30)
 }
 
