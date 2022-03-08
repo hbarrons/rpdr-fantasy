@@ -61,7 +61,7 @@
        hide"
       <% } %>
       ">
-        <h2>Who will be crowned America's next Drag Superstar?</h2>
+        <h2>Who will be crowned <br>America's next Drag Superstar?</h2>
         <form class="drag-superstar" action="/profiles/<% profile._id %> /guessSeason" method="post">
           <br>
           <select name="guessSeason">
@@ -122,7 +122,7 @@
           </select>
         </label>
         <br>
-        <label>
+        <label class="label">
           Name:
           <select name="name">
             <option value="Bosco">Bosco</option>
@@ -141,6 +141,7 @@
             <option value="June Jambalaya">June Jambalaya</option>
           </select>
         </label>
+        <br>
         <br>
         <button type="submit">Make Guess</button>
       </form>

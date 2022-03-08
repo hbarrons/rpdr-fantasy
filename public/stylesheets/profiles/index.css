@@ -9,10 +9,10 @@ img {
   /* padding-left: 60px; */
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: left;
+  height: 150px;
+  width: 150px;
 }
-
-
 
 button:hover {
   background-color: rgb(156, 42, 156);
@@ -24,8 +24,24 @@ table {
   margin: auto;
 }
 
+.guess {
+  font-size: 14px;
+}
+
 .profile-card {
-  display: inline;
+  display: flex;
+  flex-flow: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-flow: wrap;
+  padding: 10px;
+  margin: 10px;
+  height: 180px;
+  width: 400px;
 }
 
 .container {
@@ -50,4 +66,10 @@ table td {
 .col {
   display: flex;
   flex-flow: wrap;
+
+}
+
+.week-guess {
+  font-family: 'Racing Sans One', cursive;
+  font-size: 16px;
 }

@@ -11,23 +11,20 @@
 <main class="bg-light">
   <section class="profile-card">
     <div class="container py-5 px-3">
-      <div 
-        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-4"
-      >
+      <div class="col">
         <% profiles.forEach(profile => { %>
-          <div class="col">
             <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
               <div class="card mb-4 shadow-sm">
                 <% if (profile.avatar) { %>
                   <img
-                    class="card-img-top"
+                    class="img-top"
                     src="<%= profile.avatar %>"
                     alt="<%= profile.name %>'s avatar"
                     width="100%"
                   />
                 <% } else {%>
                   <img
-                    class="card-img-top"
+                    class="img-top"
                     src="https://picsum.photos/200"
                     alt="A placeholder avatar"
                     width="100%"
@@ -36,23 +33,29 @@
                 <div class="card-body">
                   <p class="card-title fs-3 text-dark"><%= profile.name %></p>
                 </a>
-                <div>
-                  
+                <div class="guess"> 
                   <% if (profile.guessEpisode.length === 0) { %>
                    <div>No Guesses Yet</div>
                   <% } else { %>
-                  <div>This Weeks Guess</div>
-                   <div>Episode: <%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %>
+                  <div class="week-guess">This Weeks Guess</div>
+                   <div >Episode: <%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %>
                   <br>
-                  <%= profile.guessEpisode[(profile.guessEpisode.length) - 1].name %>
+                  Queen: <%= profile.guessEpisode[(profile.guessEpisode.length) - 1].name %>
                   <% } %> 
+                </div>
+                <div> 
+                  <% if (profile.guessEpisode.length === 0) { %>
+                   <div>No Guesses Yet</div>
+                  <% } else { %>
+                  <div class="week-guess">Season Winner Guess</div>
+                   <div>Queen: <%= profile.guessSeason %>
+                  <% } %> 
+                </div>
                 </div>
                 </div>
               </div>
           </div>
         <% }) %>
-      </div>
-    </div>
   </section>
 </main>
 

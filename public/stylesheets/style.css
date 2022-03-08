@@ -54,6 +54,13 @@ main {
   flex-direction: column;
 }
 
+.logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
 .profile-card {
   display: flex;
   flex-flow: wrap;
@@ -71,6 +78,10 @@ main {
 
 .welcome {
   font-family: 'Racing Sans One', cursive;
+  font-size: 50px;
+  margin: 0;
+  margin-top: 15px;
+  color: #DF2C7B;
 }
 
 .ruFace {
@@ -124,7 +135,7 @@ nav > a {
 }
 
 button.siwg {
-  background-color: rgb(162, 201, 239);
+  background-color: rgb(156, 42, 156);
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;

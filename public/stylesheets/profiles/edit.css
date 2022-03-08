@@ -2,9 +2,11 @@ table {
   font-size: 2rem;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 table thead th {
+  font-family: 'Racing Sans One', cursive;
   padding: 5px;
   border: 2px solid black;
   color: rgb(30, 30, 30);
@@ -15,6 +17,10 @@ table td {
   text-align: center;
   border: 2px solid black;
   color: rgb(30, 30, 30)
+}
+
+label {
+  font-family: 'Racing Sans One', cursive;
 }
 
 button {
@@ -75,6 +81,10 @@ button:hover {
   align-items: center;
 }
 
+.label {
+  margin-bottom: 20px;
+}
+
 main {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -83,9 +93,6 @@ main {
 .update-favs {
   display: inline;
   text-align: center;
-  /* flex-flow: wrap;
-  align-items: center;
-  justify-content: center; */
 }
 
 .current-fav-title {
@@ -98,4 +105,15 @@ main {
   font-family: 'Racing Sans One', cursive;
   font-size: 50px;
   margin: 0;
+}
+
+.change-guess {
+  font-family: 'Racing Sans One', cursive;
+  text-align: center;
+}
+
+.guess-table {
+  display: inline;
+  text-align: center;
+  margin-top: 20px;
 }
