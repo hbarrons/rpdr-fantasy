@@ -15,7 +15,8 @@ const guessSchema = new mongoose.Schema({
 
 const favQuotesSchema = new mongoose.Schema({
   quotes: {
-    type: String
+    type: String,
+    maxItems: 4,
   }
 })
 

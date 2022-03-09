@@ -199,6 +199,7 @@ img {
   padding: 0;
   display: inline;
   text-align: center;
+  margin-top: 35px;
   height: 200px;
 }
 
@@ -441,6 +442,8 @@ table td {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    height: 80px;
+    width: 80px;
   }
   
   .guesses {

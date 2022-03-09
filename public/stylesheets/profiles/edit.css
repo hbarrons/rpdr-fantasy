@@ -2,6 +2,10 @@
   display: none;
 }
 
+.players-link {
+  display: flex;
+}
+
 table {
   font-size: 2rem;
   margin: auto;
