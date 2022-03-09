@@ -48,7 +48,9 @@ function createSeasonGuess(req,res){
 function createEpisodeGuess(req,res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
+    console.log('profile: ', profile)
     profile.guessEpisode.push(req.body)
+    console.log('profile.guessEpisode: ', profile.guessEpisode)
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
