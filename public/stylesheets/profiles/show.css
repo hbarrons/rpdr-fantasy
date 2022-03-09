@@ -65,6 +65,14 @@ label {
   grid-column: 1 / 2;
 }
 
+.enter-favs {
+  color: #DF2C7B;
+}
+
+.players-link {
+  display: inline;
+}
+
 .profile-image {
   margin: auto;
   display: flex;
@@ -372,6 +380,10 @@ table td {
   }
   
   label {
+    color: #DF2C7B;
+  }
+
+  .enter-favs {
     color: #DF2C7B;
   }
   

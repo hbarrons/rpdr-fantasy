@@ -55,6 +55,14 @@ main {
   flex-direction: column;
 }
 
+.episodes-link {
+  display: none;
+}
+
+a.episodes-link{
+  display: none;
+}
+
 .logout {
   display: flex;
   justify-content: center;
@@ -75,6 +83,10 @@ main {
   padding-top: 30px;
   font-size: 14px;
   padding-left: 4px;
+}
+
+.players-link {
+  display: none;
 }
 
 .welcome {
@@ -223,6 +235,8 @@ button.siwg {
     margin-bottom: 20px;
     padding-bottom: 20px;
     font-size: 30px;
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
   }
   
   main {
@@ -230,6 +244,10 @@ button.siwg {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+
+  .players-link {
+    display: none;
   }
 
   .episodes-link {
@@ -241,6 +259,8 @@ button.siwg {
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
   }
   
   .profile-card {
