@@ -38,4 +38,4 @@ My original wireframes:
 - Automate guesses/scoring to sync with episode air dates
 
 ## Credits
- 🙌 RuPaul🙌  - thank you for creating this amazing show! 
+The Queen herself 🙌 RuPaul🙌   - thank you for creating this amazing show! 
