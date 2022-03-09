@@ -364,6 +364,20 @@ table td {
     font-family: 'Racing Sans One';
     display: inline;
     text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .enter-favs {
+    margin: 0;
+  }
+
+  .enter-favs-btn {
+    margin-bottom: 15px;
+  }
+
+  input {
+    font-size: 12px;
   }
   
   .drag-superstar {

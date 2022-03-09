@@ -40,8 +40,8 @@
       <section class="guesses">
         <% if (profile.favQueen === undefined) { %>
           <section class="queen-quote-input">
-            <h2 class="enter-favs">Add your favorite queen and quote to get started!</h2>
-            <form action="/profiles/favorites" method="post">
+            <h2 class="enter-favs">Add your favorite<br>queen and quote to get started!</h2>
+            <form class="enter-favs" action="/profiles/favorites" method="post">
               <label>
                 Queen:
                 <input type="text" name="queen" >
@@ -54,7 +54,7 @@
               </label>
               <br>
               <br>
-              <button type="submit">Add to Profile</button>
+              <button class="btn enter-favs-btn" type="submit">Add to Profile</button>
             </form>        
           </section>
         <% } %>
@@ -180,38 +180,40 @@
       <div class="season-prediction"><%= profile.guessSeason %></div>
     </section>
   <% } %>
-  <section 
-  <% if (profile.favQueen === undefined) { %>
-   hidden='true'
-  <% } %>
-  <% if (isSelf) { %>
-    class="weekly-guess-table"
-  <% } else { %> 
-      class="player-weekly-guess"
-    <% } %> >
-    <h1 class="table-title">Weekly Guesses</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Episode</th>
-          <th>Queen</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% profile.guessEpisode.forEach(guess => { %>
-          <tr>
-            <td><%= guess.episode %></td>
-            <td><%= guess.name %></td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
+  <% if (profile.guessEpisode.length === undefined) { %>
+    <section 
+    <% if (profile.favQueen === undefined) { %>
+     hidden='true'
+    <% } %>
     <% if (isSelf) { %>
-      <form action="/profiles/<%= profile._id %>/edit" method="GET">
-        <button class="btn" type="submit">Change Guess</button>
-      </form> 
-      <% } %>
-  </section>
+      class="weekly-guess-table"
+    <% } else { %> 
+        class="player-weekly-guess"
+      <% } %> >
+      <h1 class="table-title">Weekly Guesses</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Episode</th>
+            <th>Queen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% profile.guessEpisode.forEach(guess => { %>
+            <tr>
+              <td><%= guess.episode %></td>
+              <td><%= guess.name %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% if (isSelf) { %>
+        <form action="/profiles/<%= profile._id %>/edit" method="GET">
+          <button class="btn" type="submit">Change Guess</button>
+        </form> 
+        <% } %>
+    </section>
+  <% } %>
 </main>
 
 
