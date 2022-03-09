@@ -4,7 +4,7 @@ import { isLoggedIn } from "../middleware/middleware.js";
 
 const router = Router()
 
-router.get('/', profilesCtrl.index)
+router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 router.post('/favorites', isLoggedIn, profilesCtrl.create)
 router.get('/:id/edit', isLoggedIn, profilesCtrl.editProfile)
