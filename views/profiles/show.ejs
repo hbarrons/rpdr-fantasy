@@ -97,27 +97,30 @@
        <% } %>
       > 
       <div class="maxi-title">Who will win this week's Maxi Challenge?</div>
+
       <form 
         action="/profiles/guessEpisode"
         method="post"
         class="weekly-guess-form"
       >
         <label>
-          Episode:
-          <select name="episode">
-            <option value="
-            <% if (profile.guessEpisode === undefined) {%>
-              1"
-            <% } else { %>
-            <%= profile.guessEpisode[profile.guessEpisode.length -1].episode + 1 %>"
-            <% } %> 
-            >
-            <% if (profile.guessEpisode === undefined) {%>
-              1
-            <% } else { %>
-            <%= profile.guessEpisode[profile.guessEpisode.length -1].episode + 1 %>
-            <% } %> 
-            </option>
+          <select name="episode" display="none" hidden="true">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
           </select>
         </label>
         <br>
