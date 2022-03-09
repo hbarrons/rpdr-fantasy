@@ -2,6 +2,10 @@ a {
   color: white;
 }
 
+.episodes-link {
+  display: none;
+}
+
 img {
   margin: auto;
   position: relative;
@@ -114,6 +118,10 @@ table td {
 @media only screen and (max-width: 860px) {
   a {
     color: white;
+  }
+
+  .episodes-link {
+    display: none;
   }
   
   img {

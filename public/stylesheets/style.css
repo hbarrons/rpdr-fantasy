@@ -231,6 +231,10 @@ button.siwg {
     justify-content: center;
     flex-direction: column;
   }
+
+  .episodes-link {
+    display: none;
+  }
   
   .logout {
     display: flex;

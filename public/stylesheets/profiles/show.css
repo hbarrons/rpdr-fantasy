@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+.episodes-link {
+  display: none;
+}
+
 .main-profile-player {
   display: grid;
   grid-template-columns: 25% 37.5% 37.5%;
@@ -321,6 +325,10 @@ table td {
     grid-template-rows: 100%;
     align-items: stretch;
     justify-content: center;
+  }
+
+  .episodes-link {
+    display: none;
   }
   
   .main-profile-player {
