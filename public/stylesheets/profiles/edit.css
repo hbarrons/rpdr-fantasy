@@ -17,7 +17,7 @@ table {
 table thead th {
   font-family: 'Racing Sans One', cursive;
   padding: 5px;
-  border: 2px solid #EA4C89;
+  border: 2px solid var(--section-title);
   color: rgb(30, 30, 30);
   color: #EA4C89
 }
@@ -25,7 +25,7 @@ table thead th {
 table td {
   padding: 10px;
   text-align: center;
-  border: 2px solid #EA4C89;
+  border: 2px solid var(--section-title);
   color: var(--text-color);
 }
 
@@ -141,7 +141,7 @@ main {
   font-family: 'Racing Sans One', cursive;
   font-size: 50px;
   margin: 0;
-  color: #EA4C89;
+  color: var(--section-title);
 }
 
 .change-guess {
@@ -176,6 +176,7 @@ body {
   --btn-txt-color: rgb(253,255,245);
   --a-color: white;
   --profile-bg: #fbdeeb;
+  --section-title: #DF2C7B;
   --light-dark-btn-content: "Dark";
   align-items: center;
   background-color: var(--bo dy-bg);
@@ -191,6 +192,7 @@ body.dark {
   --btn-txt-color: rgb(253,255,245);
   --a-color: purple;
   --profile-bg: #E372A3;
+  --section-title: rgb(253,255,245);
   --light-dark-btn-content: "Light";
   background-color: var(--body-bg);
 }
@@ -221,6 +223,7 @@ body.dark {
     --btn-txt-color: rgb(253,255,245);
     --a-color: purple;
     --profile-bg: #E372A3;
+    --section-title: rgb(252, 230, 187);
     --light-dark-btn-content: "Light";
     background-color: var(--body-bg);
   }
@@ -245,15 +248,20 @@ body.dark {
   table thead th {
     font-family: 'Racing Sans One', cursive;
     padding: 5px;
-    border: 2px solid #EA4C89;
+    border: 2px solid var(--section-title);
     color: rgb(30, 30, 30);
-    color: #EA4C89
+    color: var(--section-title);
+  }
+
+  h1.title {
+    font-size: 16px;
+    color: var(--header-txt-color);
   }
   
   table td {
     padding: 10px;
     text-align: center;
-    border: 2px solid #EA4C89;
+    border: 2px solid var(--section-title);
     color: var(--text-color);
     font-size: 12px;
   }
@@ -386,13 +394,13 @@ body.dark {
     font-family: 'Racing Sans One', cursive;
     font-size: 50px;
     margin: 0;
-    color: #EA4C89;
+    color: var(--section-title);
   }
   
   .change-guess {
     font-family: 'Racing Sans One', cursive;
     text-align: center;
-    color: var(--text-color);
+    color: var(--section-title);
   }
   
   .guess-table {
@@ -401,6 +409,10 @@ body.dark {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     margin: 0;
+  }
+
+  .update-guess {
+    padding-left: 0;
   }
   
   label {

@@ -16,6 +16,10 @@
   grid-template-rows: 25vh 75vh;
 }
 
+.page-title {
+  color: var(--section-title);
+}
+
 .profile-details {
   background-color: var(--profile-bg);
   border-right: 3px solid #DF2C7B;
@@ -366,7 +370,7 @@ table thead th {
   padding: 5px;
   border: 2px solid var(--section-title);
   font-family: 'Racing Sans One', cursive;
-  color: var(--section-title);
+  color: var(--table-title);
 }
 
 table td {
@@ -393,6 +397,7 @@ body {
   --profile-bg: #fbdeeb;
   --name-color: #DF2C7B;
   --section-title: #DF2C7B;
+  --table-title: #DF2C7B;
   --light-dark-btn-content: "Dark";
   align-items: center;
   background-color: var(--bo dy-bg);
@@ -409,6 +414,7 @@ body.dark {
   --a-color: rgb(252, 230, 187);
   --profile-bg: #E372A3;
   --name-color: #5E1334;
+  --table-title: rgb(252, 230, 187);
   --section-title: #E372A3;
   --light-dark-btn-content: "Light";
   background-color: var(--body-bg);
@@ -447,6 +453,7 @@ body.dark {
   }
 
   h1.title {
+    font-size: 16px;
     color: var(--header-txt-color);
   }
   
@@ -582,6 +589,10 @@ body.dark {
     margin: auto;
     font-size: 20px;
     padding-top: 10px;
+  }
+  
+  .page-title {
+    color: var(--section-title);
   }
   
   .season-winner {
@@ -798,7 +809,7 @@ body.dark {
     display: inline;
     text-align: center;
     margin: 0;
-    padding-top: 100px;
+    margin-top: 150px;
     font-size: 2rem;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
@@ -825,7 +836,7 @@ body.dark {
     padding: 5px;
     border: 2px solid #DF2C7B;
     font-family: 'Racing Sans One', cursive;
-    color: #DF2C7B
+    color: var(--table-title);
   }
   
   table td {
