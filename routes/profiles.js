@@ -18,7 +18,6 @@ router.delete('/:id/favQuotes/:favQuotesId', isLoggedIn, profilesCtrl.deleteQuot
 router.put('/:id/guessEpisode', isLoggedIn, profilesCtrl.updateGuessEpisode)
 
 
-
 export {
   router
 }

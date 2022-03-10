@@ -338,7 +338,6 @@ button.siwg:hover {
   content: var(--light-dark-btn-content);
 }
 
-
 .weekly-guess-table {
   display: inline;
   text-align: center;
@@ -368,7 +367,7 @@ table {
 
 table thead th {
   padding: 5px;
-  border: 2px solid var(--section-title);
+  border: 2px solid var(--table);
   font-family: 'Racing Sans One', cursive;
   color: var(--table-title);
 }
@@ -376,7 +375,7 @@ table thead th {
 table td {
   padding: 10px;
   text-align: center;
-  border: 2px solid var(--section-title);
+  border: 2px solid var(--table);
   color: var(--text-color);
 }
 
@@ -398,6 +397,7 @@ body {
   --name-color: #DF2C7B;
   --section-title: #DF2C7B;
   --table-title: #DF2C7B;
+  --table: #DF2C7B
   --light-dark-btn-content: "Dark";
   align-items: center;
   background-color: var(--bo dy-bg);
@@ -415,13 +415,11 @@ body.dark {
   --profile-bg: #E372A3;
   --name-color: #5E1334;
   --table-title: rgb(252, 230, 187);
+  --table: rgb(252, 230, 187);
   --section-title: #E372A3;
   --light-dark-btn-content: "Light";
   background-color: var(--body-bg);
 }
-
-
-
 
 @media only screen and (max-width: 860px) {
   body {
@@ -626,6 +624,7 @@ body.dark {
     color: var(--text-color);
     font-size: 12px;
     padding: 0 10px 0 10px;
+    display: inline;
   }
   
   .season-guess  {
@@ -680,7 +679,7 @@ body.dark {
   }
 
   nav {
-    grid-template-columns: 8% 8% 8% 51% 15% 10%;
+    grid-template-columns: 10% 10% 4% 51% 15% 10%;
     grid-template-rows: 100px;
   }
   
@@ -710,11 +709,17 @@ body.dark {
     align-items: center;
   }
   
+  .logout {
+    padding-bottom:40px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
   button.siwg {
     background-color: rgb(156, 42, 156);
-    font-size: 14px;
+    font-size: 12px;
     color: white;
-    padding: 4px 8px;
+    padding: 5px;
   }
   
   button:hover {
@@ -803,8 +808,6 @@ body.dark {
     content: var(--light-dark-btn-content);
   }
 
-
-
   .weekly-guess-table {
     display: inline;
     text-align: center;
@@ -834,7 +837,7 @@ body.dark {
   
   table thead th {
     padding: 5px;
-    border: 2px solid #DF2C7B;
+    border: 2px solid var(--table);
     font-family: 'Racing Sans One', cursive;
     color: var(--table-title);
   }
@@ -842,7 +845,7 @@ body.dark {
   table td {
     padding: 10px;
     text-align: center;
-    border: 2px solid #DF2C7B;
+    border: 2px solid var(--table);
     color: var(--text-color)
   }
   

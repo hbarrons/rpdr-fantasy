@@ -2,17 +2,12 @@ html {
   box-sizing: border-box
 }
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
+*, 
+*::before, 
+*::after {
   box-sizing: inherit;
 }
 
-/* resets font size to be 62.5% of the user preference - 
-     in most browser configurations this will be 10px */
 :root {
     font-size: 62.5%
 }
@@ -237,8 +232,6 @@ button:hover {
   content: var(--light-dark-btn-content);
 }
 
-
-
 body {
   --body-bg: rgb(253,255,245);
   --header-txt-color: rgb(253,255,245);
@@ -265,58 +258,51 @@ body.dark {
   background-color: var(--body-bg);
 }
 
-
-
 @media only screen and (max-width: 860px) {
 
   html {
     box-sizing: border-box
   }
   
-  /* The Universal Selector */
-  *, /* All elements*/
-  *::before, /* All ::before pseudo-elements */
-  *::after { /* All ::after pseudo-elements */
-    /* height & width will now include border & padding by default
-       but can be over-ridden as needed */
+  *, 
+  *::before,
+  *::after {
     box-sizing: inherit;
   }
   
-  /* resets font size to be 62.5% of the user preference - 
-       in most browser configurations this will be 10px */
   :root {
       font-size: 62.5%
   }
   
- body {
-  --body-bg: rgb(253,255,245);
-  --header-txt-color: rgb(253,255,245);
-  --text-color: black;
-  --btn-txt-color: rgb(253,255,245);
-  --a-color: white;
-  --profile-bg: #fbdeeb;
-  --light-dark-btn-content: "Dark";
-  align-items: center;
-  background-color: var(--bo dy-bg);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  margin: 0;
-}
+  body {
+    --body-bg: rgb(253,255,245);
+    --header-txt-color: rgb(253,255,245);
+    --text-color: black;
+    --btn-txt-color: rgb(253,255,245);
+    --a-color: white;
+    --profile-bg: #fbdeeb;
+    --light-dark-btn-content: "Dark";
+    align-items: center;
+    background-color: var(--bo dy-bg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
+  }
 
-body.dark {
-  --body-bg: #5E1334;
-  --header-txt-color: rgb(252, 230, 187);
-  --text-color: rgb(252, 230, 187);
-  --btn-txt-color: rgb(253,255,245);
-  --a-color: purple;
-  --profile-bg: #E372A3;
-  --light-dark-btn-content: "Light";
-  background-color: var(--body-bg);
-}
+  body.dark {
+    --body-bg: #5E1334;
+    --header-txt-color: rgb(252, 230, 187);
+    --text-color: rgb(252, 230, 187);
+    --btn-txt-color: rgb(253,255,245);
+    --a-color: purple;
+    --profile-bg: #E372A3;
+    --light-dark-btn-content: "Light";
+    background-color: var(--body-bg);
+  }
   
   nav {
     background-color: #DF2C7B;
-    font-size: 1.6rem;#DF2C7
+    font-size: 1.6rem;
     display: grid;
     grid-template-columns: 8% 8% 8% 51% 15% 10%;
     grid-template-rows: 100px;
@@ -368,15 +354,14 @@ body.dark {
     grid-row: 1 / 2;
     display: flex;
     justify-content: center;
-    align-items: left;
-    margin-top: 22px;
-    margin-right: 100px;
-    padding-right: 30px;
+    align-items: center;
+    /* margin-top: 22px;
+    margin-right: 20px; */
     background-color: rgb(156, 42, 156);
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
-    color: var(--btn-text-color);
+    color: #FFFFFF;
     cursor: pointer;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 10px;
@@ -387,13 +372,17 @@ body.dark {
     outline: none;
     text-align: center;
     text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
     content: var(--light-dark-btn-content);
   }
 
   #light-dark-button::after {
     content: var(--light-dark-btn-content);
   }
-
   
   .profile-card {
     display: flex;
@@ -477,27 +466,9 @@ body.dark {
   
   button.siwg {
     background-color: rgb(156, 42, 156);
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
-    font-weight: 500;
-    height: 40px;
-    line-height: 20px;
-    list-style: none;
-    margin: auto;
-    outline: none;
-    padding: 10px 16px;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    color: white;
+    padding: 5px;
   }
   
   .link {
@@ -509,6 +480,4 @@ body.dark {
   .profile-avatar {
     margin-top: 50px;
   }
-
-
 }

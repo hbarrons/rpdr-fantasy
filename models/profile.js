@@ -35,7 +35,6 @@ const profileSchema = new mongoose.Schema({
   timestamps: true
 })
 
-
 const Profile = mongoose.model('Profile', profileSchema)
 
 export {

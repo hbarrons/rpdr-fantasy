@@ -79,24 +79,25 @@
                 <form action="/profiles/<%= profile._id %>/guessEpisode?_method=PUT" method="POST">
                   <select name="episode">
                     <option value="<%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %>"><%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %> </option>
+                  </select>
+              </td>
+                <td>
+                  <select name="name">
+                    <option value="Bosco">Bosco</option>
+                    <option value="DeJa Skye">DeJa Skye</option>
+                    <option value="Willow Pill">Willow Pill</option>
+                    <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
+                    <option value="Lady Camden">Lady Camden</option>
+                    <option value="Daya Betty">Daya Betty</option>
+                    <option value="Jasmine Kennedie">Jasmine Kennedie</option>
+                    <option value="Jorgeous">Jorgeous</option>
+                    <option value="Kerri Colby">Kerri Colby</option>
+                    <option value="Maddy Morphosis">Maddy Morphosis</option>
+                    <option value="Orion Story">Orion Story</option>
+                    <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
+                    <option value="Alyssa Hunter">Alyssa Hunter</option>
+                    <option value="June Jambalaya">June Jambalaya</option>
                   </select></td>
-                  <td>
-                    <select name="name">
-                      <option value="Bosco">Bosco</option>
-                      <option value="DeJa Skye">DeJa Skye</option>
-                      <option value="Willow Pill">Willow Pill</option>
-                      <option value="Angeria Paris VanMicheals">Angeria Paris VanMicheals</option>
-                      <option value="Lady Camden">Lady Camden</option>
-                      <option value="Daya Betty">Daya Betty</option>
-                      <option value="Jasmine Kennedie">Jasmine Kennedie</option>
-                      <option value="Jorgeous">Jorgeous</option>
-                      <option value="Kerri Colby">Kerri Colby</option>
-                      <option value="Maddy Morphosis">Maddy Morphosis</option>
-                      <option value="Orion Story">Orion Story</option>
-                      <option value="Kornbred 'The Snack' Jete">Kornbred 'The Snack' Jete</option>
-                      <option value="Alyssa Hunter">Alyssa Hunter</option>
-                      <option value="June Jambalaya">June Jambalaya</option>
-                    </select></td>
             </tr>
         </tbody>
       </table>
