@@ -17,7 +17,7 @@
 }
 
 .profile-details {
-  background-color: #fbdeeb;
+  background-color: var(--profile-bg);
   border-right: 3px solid #DF2C7B;
   padding: 0;
   display: inline;
@@ -56,7 +56,7 @@ input {
 }
 
 .profile-details-player {
-  background-color: #fbdeeb;
+  background-color: var(--profile-bg);
   border-right: 3px solid #DF2C7B;
   grid-row: 1 / 3;
   padding: 0;
@@ -104,7 +104,7 @@ img {
 }
 
 .guesses {
-  background-color:  rgb(253,255,245);
+  background-color:  var(--body-bg);
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 250px;
@@ -118,6 +118,7 @@ img {
 }
 
 .season-prediction {
+  color: var(--text-color);
   text-align: center;
   overflow: hidden;
   display: inline;
@@ -151,9 +152,11 @@ img {
 
 .fav-queen {
   font-size: 20px;
+  color: var(--text-color);
 }
 
 .quotes {
+  color: var(--text-color);
   font-size: 20px;
   padding: 0 10px 0 10px;
 }
@@ -330,18 +333,75 @@ table td {
   padding: 10px;
   text-align: center;
   border: 2px solid #DF2C7B;
-  color: rgb(30, 30, 30)
+  color: var(--text-color);
 }
 
 .hide {
   display: none;
 }
 
+h1.title {
+  color: var(--header-txt-color);
+}
+
+body {
+  --body-bg: rgb(253,255,245);
+  --header-txt-color: rgb(253,255,245);
+  --text-color: black;
+  --btn-txt-color: rgb(253,255,245);
+  --a-color: white;
+  --profile-bg: #fbdeeb;
+  --light-dark-btn-content: "Dark Mode";
+  align-items: center;
+  background-color: var(--bo dy-bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+body.dark {
+  --body-bg: #5E1334;
+  --header-txt-color: rgb(252, 230, 187);
+  --text-color: rgb(252, 230, 187);
+  --btn-txt-color: rgb(253,255,245);
+  --a-color: purple;
+  --profile-bg: #E372A3;
+  background-color: var(--body-bg);
+}
 
 
 
 
 @media only screen and (max-width: 860px) {
+  body {
+    --body-bg: rgb(253,255,245);
+    --header-txt-color: rgb(253,255,245);
+    --text-color: black;
+    --btn-txt-color: rgb(253,255,245);
+    --a-color: white;
+    --profile-bg: #fbdeeb;
+    --light-dark-btn-content: "Dark Mode";
+    align-items: center;
+    background-color: var(--bo dy-bg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
+  }
+  
+  body.dark {
+    --body-bg: #5E1334;
+    --header-txt-color: rgb(252, 230, 187);
+    --text-color: rgb(252, 230, 187);
+    --btn-txt-color: rgb(253,255,245);
+    --a-color: purple;
+    --profile-bg: #E372A3;
+    background-color: var(--body-bg);
+  }
+
+  h1.title {
+    color: var(--header-txt-color);
+  }
+  
   .main-profile {
     display: grid;
     grid-template-columns: 25% 75%;
@@ -361,7 +421,7 @@ table td {
   }
   
   .profile-details {
-    background-color: #fbdeeb;
+    background-color: var(--profile-bg);
     border-right: 3px solid #DF2C7B;
     padding: 0;
     display: inline;
@@ -400,7 +460,7 @@ table td {
   }
   
   .profile-details-player {
-    background-color: #fbdeeb;
+    background-color: var(--profile-bg);
     border-right: 3px solid #DF2C7B;
     grid-row: 1 / 3;
     padding: 0;
@@ -409,7 +469,7 @@ table td {
   }
   
   label {
-    color: #DF2C7B;
+    color: var(--text-color);
   }
 
   .enter-favs {
@@ -447,7 +507,7 @@ table td {
   }
   
   .guesses {
-    background-color:  rgb(253,255,245);
+    background-color:  var(--body-bg);
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 10% 10% 1500px;
@@ -461,6 +521,7 @@ table td {
   }
   
   .season-prediction {
+    color: var(--text-color);
     text-align: center;
     overflow: hidden;
     display: inline;
@@ -494,9 +555,11 @@ table td {
   
   .fav-queen {
     font-size: 14px;
+    color: var(--text-color);
   }
   
   .quotes {
+    color: var(--text-color);
     font-size: 12px;
     padding: 0 10px 0 10px;
   }

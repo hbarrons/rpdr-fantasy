@@ -1,14 +1,7 @@
 const lightDarkBtn = document.getElementById("light-dark-button")
 const body = document.querySelector("body")
 
-
-
 lightDarkBtn.addEventListener("click", toggleLightDark)
-
-
-
-
-
 
 
 function toggleLightDark() {
