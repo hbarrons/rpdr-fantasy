@@ -21,7 +21,7 @@ nav {
   background-color: #DF2C7B;
   font-size: 1.6rem;
   display: grid;
-  grid-template-columns: 9% 8% 7% 60% 16%;
+  grid-template-columns: 9% 8% 7% 60% 8% 8%;
   grid-template-rows: 50px;
   border-bottom: 3px solid #e73f88;
   height: 70px;

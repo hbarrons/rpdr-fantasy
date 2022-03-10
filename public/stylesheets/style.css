@@ -29,7 +29,7 @@ nav {
   background-color: #DF2C7B;
   font-size: 1.6rem;
   display: grid;
-  grid-template-columns: 8% 8% 8% 60% 16%;
+  grid-template-columns: 8% 8% 8% 60% 8% 8%;
   grid-template-rows: 50px;
   border-bottom: 3px solid #e73f88;
   height: 70px;
@@ -182,6 +182,43 @@ button.siwg {
   margin-top: 50px;
 }
 
+/* Dark Mode */
+
+
+body {
+  --body-bg: #8a8b9b;
+  --btn-text-color: #2a2a2a;
+  --card-text-color: #3e3e3e;
+  --header-bg: #007bbe;
+  --header-text-color: #d8d8d8;
+  --inverted-btn-text-color: #eaeaea;
+  --light-dark-btn-bg: #1d1e2b;
+  --light-dark-btn-content: "Dark Mode";
+  --tay: #822A3E;
+  --ye: #2B3F6E;
+  align-items: center;
+  background-color: var(--bo dy-bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+body.dark {
+  --body-bg: #22232b;
+  --btn-text-color: #eaeaea;
+  --card-text-color: #dedede;
+  --header-bg: #005e9d;
+  --header-text-color: #d8d8d8;
+  --inverted-btn-text-color: #2a2a2a;
+  --light-dark-btn-bg: linear-gradient(to right top, #444655, #595b6b, #6f7181,
+    #868898, #9ea0b0, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
+  --light-dark-btn-content: "Light Mode";
+  --tay: linear-gradient(to right top, #560185, #6b0092, #7e009b, #89009b, 
+    #920097, #a7008b, #bd0281, #ac0064, #bd134f, #c52f39, #c54a22, #be6300);
+  --ye: linear-gradient(to right top, #213555, #213c59, #22425d, #254960,
+    #2a4f63, #264c61, #224860, #1e455e, #173757, #18294e, #1d1941, #210632);
+  background-color: var(--body-bg);
+}
 
 
 
