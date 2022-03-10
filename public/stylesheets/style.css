@@ -208,34 +208,6 @@ button:hover {
   margin-top: 50px;
 }
 
-#light-dark-button:hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 22px;
-  margin-right: 20px;
-  background-color: #DF2C7B;
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-  height: 30px;
-  line-height: 20px;
-  list-style: none;
-  outline: none;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
 #light-dark-button {
   display: flex;
   justify-content: center;
@@ -258,6 +230,7 @@ button:hover {
   text-align: center;
   text-decoration: none;
   vertical-align: baseline;
+  content: var(--light-dark-btn-content);
 }
 
 
@@ -310,43 +283,44 @@ body.dark {
       font-size: 62.5%
   }
   
-  body {
-    --body-bg: rgb(253,255,245);
-    --header-txt-color: rgb(253,255,245);
-    --text-color: black;
-    --btn-txt-color: rgb(253,255,245);
-    --a-color: white;
-    --profile-bg: #fbdeeb;
-    --light-dark-btn-content: "Dark Mode";
-    align-items: center;
-    background-color: var(--bo dy-bg);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    margin: 0;
-  }
-  
-  body.dark {
-    --body-bg: #5E1334;
-    --header-txt-color: rgb(252, 230, 187);
-    --text-color: rgb(252, 230, 187);
-    --btn-txt-color: rgb(253,255,245);
-    --a-color: purple;
-    --profile-bg: #E372A3;
-    background-color: var(--body-bg);
-  }
+ body {
+  --body-bg: rgb(253,255,245);
+  --header-txt-color: rgb(253,255,245);
+  --text-color: black;
+  --btn-txt-color: rgb(253,255,245);
+  --a-color: white;
+  --profile-bg: #fbdeeb;
+  --light-dark-btn-content: "Dark";
+  align-items: center;
+  background-color: var(--bo dy-bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+body.dark {
+  --body-bg: #5E1334;
+  --header-txt-color: rgb(252, 230, 187);
+  --text-color: rgb(252, 230, 187);
+  --btn-txt-color: rgb(253,255,245);
+  --a-color: purple;
+  --profile-bg: #E372A3;
+  --light-dark-btn-content: "Light";
+  background-color: var(--body-bg);
+}
   
   nav {
     background-color: #DF2C7B;
     font-size: 1.6rem;#DF2C7
     display: grid;
-    grid-template-columns: 8% 8% 8% 60% 8% 8%;
+    grid-template-columns: 8% 8% 8% 51% 15% 10%;
     grid-template-rows: 100px;
     border-bottom: 3px solid #e73f88;
     height: 70px;
   }
   
   h1.title {
-    color: rgb(253,255,245);
+    color: var(--header-txt-color);
     text-align: center;
     font-family: 'Racing Sans One', cursive;
     font-size: 30px;
@@ -384,34 +358,6 @@ body.dark {
     grid-column: 6 / 7;
     grid-row: 1 / 2;
   }
-
-  #light-dark-button:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 22px;
-    margin-right: 20px;
-    background-color: #DF2C7B;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 10px;
-    font-weight: bold;
-    height: 30px;
-    line-height: 20px;
-    list-style: none;
-    outline: none;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
   
   #light-dark-button {
     grid-column: 5 / 6;
@@ -437,11 +383,7 @@ body.dark {
     outline: none;
     text-align: center;
     text-decoration: none;
-    /* transition: color 100ms; */
-    vertical-align: baseline;
-    /* user-select: none; */
-    -webkit-user-select: none;
-    /* touch-action: manipulation; */
+    content: var(--light-dark-btn-content);
   }
   
   .profile-card {
@@ -462,6 +404,7 @@ body.dark {
   a {
     margin-left: 5px;
     width: 100px;
+    font-size: 12px;
   }
   
   .welcome {
