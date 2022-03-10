@@ -1,5 +1,5 @@
 a {
-  color: white;
+  color: var(--text-color);
 }
 
 .episodes-link {
@@ -48,7 +48,7 @@ table {
 }
 
 main {
-  background-color: rgb(253,255,245);
+  background-color: var(--body-bg);
   height: 100vh;
   display: flex;
   flex-flow: wrap;
@@ -173,7 +173,7 @@ body.dark {
   }
   
   a {
-    color: white;
+    color: var(--text-color);
   }
 
   .episodes-link {
