@@ -568,7 +568,7 @@ body.dark {
     background-color:  var(--body-bg);
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 10% 1500px;
+    grid-template-rows: 13% 10% 1500px;
     margin: 0;
     padding: 0;
     justify-content: flex-start;
