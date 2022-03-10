@@ -397,7 +397,7 @@ body {
   --name-color: #DF2C7B;
   --section-title: #DF2C7B;
   --table-title: #DF2C7B;
-  --table: #DF2C7B
+  --table: #DF2C7B;
   --light-dark-btn-content: "Dark";
   align-items: center;
   background-color: var(--bo dy-bg);
