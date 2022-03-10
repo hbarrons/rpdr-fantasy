@@ -6,6 +6,7 @@
   crossorigin="anonymous"
 >
 <link rel="stylesheet" href="/stylesheets/profiles/index.css"/>
+<link rel="shortcut icon" href="./images/rpdr-fantasy/RuPaul.png">
 <%- include('../partials/nav') %>
 
 <main class="bg-light">
@@ -35,7 +36,8 @@
                 </a>
                 <div class="guess"> 
                   <% if (profile.guessEpisode.length === 0) { %>
-                   <div>No Guesses Yet</div>
+                    <div class="week-guess">This Weeks Guess</div>
+                    <div>No Guesses Yet</div>
                   <% } else { %>
                   <div class="week-guess">This Weeks Guess</div>
                    <div >Episode: <%= profile.guessEpisode[(profile.guessEpisode.length) - 1].episode %>
@@ -45,6 +47,7 @@
                 </div>
                 <div> 
                   <% if (profile.guessEpisode.length === 0) { %>
+                    <div class="week-guess">Season Winner Guess</div>
                    <div>No Guesses Yet</div>
                   <% } else { %>
                   <div class="week-guess">Season Winner Guess</div>
