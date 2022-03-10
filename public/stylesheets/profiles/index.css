@@ -117,12 +117,60 @@ table td {
   color: #DF2C7B
 }
 
+body {
+  --body-bg: rgb(253,255,245);
+  --header-txt-color: rgb(253,255,245);
+  --text-color: black;
+  --btn-txt-color: rgb(253,255,245);
+  --a-color: white;
+  --profile-bg: #fbdeeb;
+  --light-dark-btn-content: "Dark Mode";
+  align-items: center;
+  background-color: var(--bo dy-bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
 
+body.dark {
+  --body-bg: #5E1334;
+  --header-txt-color: rgb(252, 230, 187);
+  --text-color: rgb(252, 230, 187);
+  --btn-txt-color: rgb(253,255,245);
+  --a-color: purple;
+  --profile-bg: #E372A3;
+  background-color: var(--body-bg);
+}
 
 
 
 
 @media only screen and (max-width: 860px) {
+  body {
+    --body-bg: rgb(253,255,245);
+    --header-txt-color: rgb(253,255,245);
+    --text-color: black;
+    --btn-txt-color: rgb(253,255,245);
+    --a-color: white;
+    --profile-bg: #fbdeeb;
+    --light-dark-btn-content: "Dark Mode";
+    align-items: center;
+    background-color: var(--bo dy-bg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
+  }
+  
+  body.dark {
+    --body-bg: #5E1334;
+    --header-txt-color: rgb(252, 230, 187);
+    --text-color: rgb(252, 230, 187);
+    --btn-txt-color: rgb(253,255,245);
+    --a-color: purple;
+    --profile-bg: #E372A3;
+    background-color: var(--body-bg);
+  }
+  
   a {
     color: white;
   }

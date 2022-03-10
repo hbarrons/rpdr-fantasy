@@ -277,12 +277,13 @@ body {
 }
 
 body.dark {
-  --body-bg: rgb(27, 1, 27);
-  --header-txt-color: rgb(27, 1, 27);
-  --text-color: rgb(253,255,245);
+  --body-bg: #5E1334;
+  --header-txt-color: rgb(252, 230, 187);
+  --text-color: rgb(252, 230, 187);
   --btn-txt-color: rgb(253,255,245);
   --a-color: purple;
-  --profile-bg: rgb(27, 1, 27);
+  --profile-bg: #E372A3;
+  --light-dark-btn-content: "Light";
   background-color: var(--body-bg);
 }
 
@@ -310,23 +311,27 @@ body.dark {
   }
   
   body {
-    background-color: rgb(253,255,245);
-    /* Use a system font, if none are available use an available sans-sarif font */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    margin: 0;
     --body-bg: rgb(253,255,245);
     --header-txt-color: rgb(253,255,245);
     --text-color: black;
     --btn-txt-color: rgb(253,255,245);
+    --a-color: white;
+    --profile-bg: #fbdeeb;
     --light-dark-btn-content: "Dark Mode";
+    align-items: center;
+    background-color: var(--bo dy-bg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
   }
   
   body.dark {
-    --body-bg: #18191b;
-    --header-txt-color: rgb(253,255,245);
-    --text-color: black;
+    --body-bg: #5E1334;
+    --header-txt-color: rgb(252, 230, 187);
+    --text-color: rgb(252, 230, 187);
     --btn-txt-color: rgb(253,255,245);
+    --a-color: purple;
+    --profile-bg: #E372A3;
     background-color: var(--body-bg);
   }
   

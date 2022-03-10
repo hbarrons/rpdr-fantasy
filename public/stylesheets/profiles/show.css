@@ -614,6 +614,11 @@ body.dark {
     margin: 5px;
     color: #DF2C7B
   }
+
+  nav {
+    grid-template-columns: 10% 10% 10% 50% 10% 10%;
+    grid-template-rows: 100px;
+  }
   
   button {
     background-color: #EA4C89;
@@ -697,6 +702,58 @@ body.dark {
     -webkit-user-select: none;
     align-items: center;
   }
+
+  #light-dark-button:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22px;
+    margin-right: 20px;
+    background-color: #DF2C7B;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 20px;
+    list-style: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  #light-dark-button {
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    text-align: center;
+    margin: 0;
+    margin-right: 180px;
+    padding-top: 20px;
+    margin-top: 25px;
+    background-color: rgb(156, 42, 156);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: var(--btn-text-color);
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 20px;
+  }
   
   .weekly-guess-table {
     display: inline;
@@ -736,13 +793,10 @@ body.dark {
     padding: 10px;
     text-align: center;
     border: 2px solid #DF2C7B;
-    color: rgb(30, 30, 30)
+    color: var(--text-color)
   }
   
   .hide {
     display: none;
   }
-
-
-
 }
