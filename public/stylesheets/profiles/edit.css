@@ -239,7 +239,7 @@ body.dark {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    
+    padding: 0 40px;
   }
   
   table thead th {
@@ -255,6 +255,7 @@ body.dark {
     text-align: center;
     border: 2px solid #EA4C89;
     color: var(--text-color);
+    font-size: 12px;
   }
   
   label {
@@ -369,6 +370,7 @@ body.dark {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
     margin-bottom: 50px;
+    padding: 0 40px;
   }
   
   .current-fav-title {
@@ -400,6 +402,37 @@ body.dark {
   
   label {
     color: #EA4C89;
+  }
+
+  #light-dark-button {
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 22px;
+    margin-right: 20px; */
+    background-color: rgb(156, 42, 156);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 20px;
+    list-style: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    content: var(--light-dark-btn-content);
   }
 
 
