@@ -4,7 +4,16 @@
 [Click Here!](https://rpdr-fantasy.herokuapp.com/)
 
 ## Objective
-I'm a big fan of RuPaul's Drag Race (RPDR), and after years of watching I just recently started playing in a fantasy league with some friends. In the fantasy league we guess which drag queen will win the Maxi Challenge for each episode, and get points each week depending on how that queen performs. We currently use a google spreadsheet to track everyone's guesses/points, and I thought it would be a fun project to try and make a web app that would mimic the fantasy league and automate the scoring system for us.
+I'm a big fan of RuPaul's Drag Race (RPDR), and after years of watching I recently started playing in a fantasy league with some friends. In the fantasy league we guess which drag queen will win the Maxi Challenge for each episode, and get points each week depending on how that queen performs. We currently use a google spreadsheet to track everyone's guesses/points, and I thought it would be a fun project to try and make a web app that would mimic the fantasy league and automate the scoring system for us.
+
+### Home Screen
+
+Light Mode
+![Home page in light mode](public/images/rpdr-fantasy/HomeScreen_Light.png)
+
+Dark Mode
+![Home page in dark mode](public/images/rpdr-fantasy/HomeScreen_Dark.png)
+
 
 ### Wireframe
 
@@ -30,8 +39,8 @@ My original wireframes:
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white "Heroku Badge")
 
 ## Future Enhancements
-- Responsive Design
-- Dark Mode
+- ~~Responsive Design~~
+- ~~Dark Mode~~
 - Scoring System
 - Add a 'League' feature to allow groups of friends to play together
 - Add photos of each queen to insert for Season Winner guess

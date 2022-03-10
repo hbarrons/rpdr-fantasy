@@ -233,6 +233,11 @@ button:hover {
   content: var(--light-dark-btn-content);
 }
 
+#light-dark-button::after {
+  content: var(--light-dark-btn-content);
+}
+
+
 
 body {
   --body-bg: rgb(253,255,245);
@@ -254,7 +259,7 @@ body.dark {
   --header-txt-color: rgb(252, 230, 187);
   --text-color: rgb(252, 230, 187);
   --btn-txt-color: rgb(253,255,245);
-  --a-color: purple;
+  --a-color: rgb(252, 230, 187);
   --profile-bg: #E372A3;
   --light-dark-btn-content: "Light";
   background-color: var(--body-bg);
@@ -385,6 +390,11 @@ body.dark {
     text-decoration: none;
     content: var(--light-dark-btn-content);
   }
+
+  #light-dark-button::after {
+    content: var(--light-dark-btn-content);
+  }
+
   
   .profile-card {
     display: flex;

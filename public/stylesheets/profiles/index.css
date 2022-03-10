@@ -117,6 +117,41 @@ table td {
   color: #DF2C7B
 }
 
+#light-dark-button {
+  grid-column: 5 / 6;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+  margin-right: 20px;
+  background-color: rgb(156, 42, 156);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  height: 30px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#light-dark-button::after {
+  content: var(--light-dark-btn-content);
+}
+
+
 body {
   --body-bg: rgb(253,255,245);
   --header-txt-color: rgb(253,255,245);
@@ -171,6 +206,40 @@ body.dark {
     --profile-bg: #E372A3;
     background-color: var(--body-bg);
   }
+
+  #light-dark-button {
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22px;
+    margin-right: 20px;
+    background-color: rgb(156, 42, 156);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 20px;
+    list-style: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  #light-dark-button::after {
+    content: var(--light-dark-btn-content);
+  }
   
   a {
     color: var(--text-color);
@@ -200,11 +269,10 @@ body.dark {
     grid-template-rows: 100px;
     border-bottom: 3px solid #e73f88;
     height: 70px;
-    padding-top: 20px;
   }
   
   .title {
-    padding-top: 20px;
+    margin-bottom: 90px;
   }
   
   .logout {
