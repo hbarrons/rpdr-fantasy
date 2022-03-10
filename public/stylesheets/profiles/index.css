@@ -91,6 +91,7 @@ main {
   height: 180px;
   width: 400px;
   margin-right: 10px;
+  background-color: var(--card-color);
 }
 
 .container {
@@ -139,6 +140,18 @@ table td {
   color: #DF2C7B
 }
 
+nav {
+  padding-top: 0;
+}
+
+.nav-link {
+  padding-top: 20px;
+}
+
+.logout {
+  margin-top: 15px;
+}
+
 #light-dark-button {
   grid-column: 5 / 6;
   grid-row: 1 / 2;
@@ -158,6 +171,7 @@ body {
   --text-color: black;
   --btn-txt-color: rgb(253,255,245);
   --a-color: white;
+  --card-color: white;
   --profile-bg: #fbdeeb;
   --light-dark-btn-content: "Dark";
   align-items: center;
@@ -167,24 +181,13 @@ body {
   margin: 0;
 }
 
-nav {
-  padding-top: 0;
-}
-
-.nav-link {
-  padding-top: 20px;
-}
-
-.logout {
-  margin-top: 15px;
-}
-
 body.dark {
   --body-bg: #5E1334;
   --header-txt-color: rgb(252, 230, 187);
   --text-color: rgb(252, 230, 187);
   --btn-txt-color: rgb(253,255,245);
   --a-color: purple;
+  --card-color: #fbdeeb;
   --profile-bg: #E372A3;
   --light-dark-btn-content: "Light";
   background-color: var(--body-bg);
