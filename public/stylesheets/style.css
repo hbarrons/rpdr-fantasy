@@ -153,18 +153,9 @@ button.siwg {
   font-size: 12px;
   font-weight: 500;
   height: 40px;
-  line-height: 20px;
-  list-style: none;
   margin: auto;
   outline: none;
   padding: 10px 16px;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 button:hover {
@@ -239,7 +230,7 @@ body {
   --btn-txt-color: rgb(253,255,245);
   --a-color: white;
   --profile-bg: #fbdeeb;
-  --light-dark-btn-content: "Dark Mode";
+  --light-dark-btn-content: "Dark";
   align-items: center;
   background-color: var(--bo dy-bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,

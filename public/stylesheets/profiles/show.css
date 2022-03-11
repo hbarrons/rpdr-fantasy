@@ -387,6 +387,7 @@ h1.title {
   color: var(--header-txt-color);
 }
 
+/* desktop light mode */
 body {
   --body-bg: rgb(253,255,245);
   --header-txt-color: rgb(253,255,245);
@@ -406,6 +407,7 @@ body {
   margin: 0;
 }
 
+/* desktop dark mode */
 body.dark {
   --body-bg: #5E1334;
   --header-txt-color: rgb(252, 230, 187);
@@ -422,6 +424,8 @@ body.dark {
 }
 
 @media only screen and (max-width: 860px) {
+  
+  /* mobile light mode */
   body {
     --body-bg: rgb(253,255,245);
     --header-txt-color: rgb(253,255,245);
@@ -438,6 +442,7 @@ body.dark {
     margin: 0;
   }
   
+  /* mobile dark mode */
   body.dark {
     --body-bg: #5E1334;
     --header-txt-color: rgb(252, 230, 187);
