@@ -626,6 +626,7 @@ body.dark {
     font-size: 12px;
     padding: 0 10px 0 10px;
     display: flex;
+    flex-flow: wrap;
     align-items: center;
     justify-content: center;
     text-align: center;
